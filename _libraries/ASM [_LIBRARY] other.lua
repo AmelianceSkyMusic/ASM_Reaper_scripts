@@ -11,11 +11,12 @@
  * Changelog:
  * v1.0.0 (2019-03-16)
   + Initial release
+ * v1.0.1 (2019-08-01) 
+  + Update code
 --]]
 
 ----------------------------------------------------------------------
 ------------------------------ OTHER ---------------------------------
 ----------------------------------------------------------------------
 
-function Msg(param) reaper.ShowConsoleMsg(tostring(param).."\n") end
-reaper.ShowConsoleMsg("")
+function Msg(a)reaper.ShowConsoleMsg(tostring(a).."\n")end;reaper.ShowConsoleMsg("")
