@@ -1,5 +1,5 @@
 --[[
- * ReaScript Name: asm_class.lua
+ * ReaScript Name: ASM [_LIBRARY] asm.lua
  * Author: Rsay Uaie (Ameliance SkyMusic)
  * Author URI: https://forum.cockos.com/member.php?u=123975
  * Licence: GPL v3
