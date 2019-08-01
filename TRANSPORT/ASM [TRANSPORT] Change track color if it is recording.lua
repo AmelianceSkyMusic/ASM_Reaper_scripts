@@ -1,12 +1,12 @@
 --[[
- * ReaScript Name: ASM [TRANSPORT] Record and change arm track color
- * Instructions:  Record and change arm track color
+ * ReaScript Name: ASM [TRANSPORT] Change track color if it is recording
+ * Instructions:  Add this script in custom action after "record" action
  * Author: Rsay Uaie (Ameliance SkyMusic)
  * Author URI: https://forum.cockos.com/member.php?u=123975
  * Licence: GPL v3
  * REAPER: 5.0
  * Version: 1.0.0
- * Description: Arm track change color while recordin is start
+ * Description: Change track color if it is recording
 --]]
 
 --[[
@@ -15,7 +15,7 @@
   + Initial release
 --]]
 
-script_title = "ASM [TRANSPORT] Record and change arm track color
+script_title = "ASM [TRANSPORT] Change track color if it is recording"
 
 local info = debug.getinfo(1,'S')
 local script_path = info.source:match([[^@?(.*[\/])[^\/]-$]])
@@ -28,7 +28,6 @@ dofile(script_path .. "../_libraries/".."/ASM [_LIBRARY] ".."other"..".lua")
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
-asm.doCmdID('1013', 'MAIN') --Transport: Record
 
 local color_R, color_G, color_B = 0, 255, 0
 
