@@ -1,22 +1,21 @@
 --[[
- * ReaScript Name: ASM [TEMPLATE] SIMPLE EMPTY LUA TEMPLATE SCRIPT
- * Instructions:  Instructions
+ * ReaScript Name: ASM [TRANSPORT] Record and change arm track color
+ * Instructions:  Record and change arm track color
  * Author: Rsay Uaie (Ameliance SkyMusic)
  * Author URI: https://forum.cockos.com/member.php?u=123975
  * Licence: GPL v3
  * REAPER: 5.0
  * Version: 1.0.0
- * Description: Description
- * Provides: ../_ini/*.{ini}
+ * Description: Arm track change color while recordin is start
 --]]
 
 --[[
  * Changelog:
- * v1.0.0 (0000-00-00)
+ * v1.0.0 (2019-05-13)
   + Initial release
 --]]
 
-script_title = "ASM [TEMPLATE] SIMPLE EMPTY LUA TEMPLATE SCRIPT"
+script_title = "ASM [TRANSPORT] Record and change arm track color
 
 local info = debug.getinfo(1,'S')
 local script_path = info.source:match([[^@?(.*[\/])[^\/]-$]])
@@ -29,6 +28,8 @@ dofile(script_path .. "../_libraries/".."/ASM [_LIBRARY] ".."other"..".lua")
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
+asm.doCmdID('1013', 'MAIN') --Transport: Record
+
 local color_R, color_G, color_B = 0, 255, 0
 
 local count_tracks_all =  reaper.CountTracks(0)
