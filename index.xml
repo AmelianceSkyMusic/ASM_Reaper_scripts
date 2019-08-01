@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="AmelianceSkyMusic scripts" commit="6f7ccd0c87f47fdc5be0e9ac1a877b1275cd92a9">
+<index version="1" name="AmelianceSkyMusic scripts" commit="91b9d88d11dded108b0e6571f7902d89f6a90ea0">
   <category name="_libraries">
     <reapack name="ASM [_LIBRARY] asm.lua" type="script" desc="asm_class.lua">
       <version name="1.0.2" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
@@ -103,12 +103,6 @@
     </reapack>
   </category>
   <category name="ITEM">
-    <reapack name="ASM [ITEM] Duplicate items relative grid (smart) - Copy.lua" type="script" desc="ASM [ITEM] Duplicate items relative grid (smart)">
-      <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
-        <changelog><![CDATA[+ Initial release]]></changelog>
-        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/ITEM/ASM%20%5BITEM%5D%20Duplicate%20items%20relative%20grid%20(smart)%20-%20Copy.lua</source>
-      </version>
-    </reapack>
     <reapack name="ASM [ITEM] Duplicate items relative grid (smart).lua" type="script" desc="ASM [ITEM] Duplicate items relative grid (smart)">
       <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
         <changelog><![CDATA[+ Initial release]]></changelog>
@@ -136,48 +130,6 @@
     <reapack name="ASM [ITEM] Remove selected items and select next.lua" type="script" desc="ASM [ITEM] Remove selected items and select next">
       <version name="1.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
         <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/ITEM/ASM%20%5BITEM%5D%20Remove%20selected%20items%20and%20select%20next.lua</source>
-      </version>
-    </reapack>
-    <reapack name="ASM edit [ITEM] Duplicate items relative grid - Copy - Copy.lua" type="script" desc="ASM [ITEM] Duplicate items relative grid">
-      <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
-        <changelog><![CDATA[+ Initial release]]></changelog>
-        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/ITEM/ASM%20edit%20%5BITEM%5D%20Duplicate%20items%20relative%20grid%20-%20Copy%20-%20Copy.lua</source>
-      </version>
-    </reapack>
-    <reapack name="ASM edit [ITEM] Duplicate items relative grid - Copy.lua" type="script" desc="ASM [ITEM] Duplicate items relative grid">
-      <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
-        <changelog><![CDATA[+ Initial release]]></changelog>
-        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/ITEM/ASM%20edit%20%5BITEM%5D%20Duplicate%20items%20relative%20grid%20-%20Copy.lua</source>
-      </version>
-    </reapack>
-    <reapack name="ASM edit [ITEM] Duplicate items relative grid_01.lua" type="script" desc="ASM [ITEM] Duplicate items relative grid">
-      <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
-        <changelog><![CDATA[+ Initial release]]></changelog>
-        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/ITEM/ASM%20edit%20%5BITEM%5D%20Duplicate%20items%20relative%20grid_01.lua</source>
-      </version>
-    </reapack>
-    <reapack name="BACKUP ASM [ITEM] Duplicate items relative grid (smart) - Copy - Copy 2.lua" type="script" desc="ASM [ITEM] Duplicate items relative grid (smart)">
-      <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
-        <changelog><![CDATA[+ Initial release]]></changelog>
-        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/ITEM/BACKUP%20ASM%20%5BITEM%5D%20Duplicate%20items%20relative%20grid%20(smart)%20-%20Copy%20-%20Copy%202.lua</source>
-      </version>
-    </reapack>
-    <reapack name="BACKUP ASM [ITEM] Duplicate items relative grid (smart) - Copy - Copy 3.lua" type="script" desc="ASM [ITEM] Duplicate items relative grid (smart)">
-      <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
-        <changelog><![CDATA[+ Initial release]]></changelog>
-        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/ITEM/BACKUP%20ASM%20%5BITEM%5D%20Duplicate%20items%20relative%20grid%20(smart)%20-%20Copy%20-%20Copy%203.lua</source>
-      </version>
-    </reapack>
-    <reapack name="BACKUP ASM [ITEM] Duplicate items relative grid (smart) - Copy - Copy.lua" type="script" desc="ASM [ITEM] Duplicate items relative grid (smart)">
-      <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
-        <changelog><![CDATA[+ Initial release]]></changelog>
-        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/ITEM/BACKUP%20ASM%20%5BITEM%5D%20Duplicate%20items%20relative%20grid%20(smart)%20-%20Copy%20-%20Copy.lua</source>
-      </version>
-    </reapack>
-    <reapack name="BACKUP ASM edit [ITEM] Duplicate items relative grid_01 - Copy.lua" type="script" desc="ASM [ITEM] Duplicate items relative grid">
-      <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
-        <changelog><![CDATA[+ Initial release]]></changelog>
-        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/ITEM/BACKUP%20ASM%20edit%20%5BITEM%5D%20Duplicate%20items%20relative%20grid_01%20-%20Copy.lua</source>
       </version>
     </reapack>
   </category>
@@ -310,6 +262,14 @@
       <version name="1.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
         <changelog><![CDATA[+ Initial release]]></changelog>
         <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/TRACK/ASM%20%5BTRACK%5D%20Toggle%20solo%20tracks%20(mute%20others)%20_soloed%20in%20place.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="TRANSPORT">
+    <reapack name="ASM [TRANSPORT] Record and change arm track color.lua" type="script" desc="ASM [TRANSPORT] Record and change arm track color">
+      <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T08:05:34Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/91b9d88d11dded108b0e6571f7902d89f6a90ea0/TRANSPORT/ASM%20%5BTRANSPORT%5D%20Record%20and%20change%20arm%20track%20color.lua</source>
       </version>
     </reapack>
   </category>
