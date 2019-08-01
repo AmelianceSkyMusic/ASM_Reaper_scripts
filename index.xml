@@ -1,2 +1,351 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="AmelianceSkyMusic scripts"/>
+<index version="1" name="AmelianceSkyMusic scripts" commit="28e3c8ce7e9990d47ab343f515d003dc26ea68b2">
+  <category name="_libraries">
+    <reapack name="ASM [_LIBRARY] asm.lua" type="script" desc="asm_class.lua">
+      <version name="1.0.2" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[+ Add new functions for work with color]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/_libraries/ASM%20%5B_LIBRARY%5D%20asm.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ASM [_LIBRARY] io.lua" type="script" desc="ASM [_LIBRARY] io.lua">
+      <version name="1.0.1" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[+ Update code]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/_libraries/ASM%20%5B_LIBRARY%5D%20io.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ASM [_LIBRARY] math.lua" type="script" desc="ASM [LIBRARY] math.lua">
+      <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/_libraries/ASM%20%5B_LIBRARY%5D%20math.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ASM [_LIBRARY] other.lua" type="script" desc="ASM [_LIBRARY] other.lua">
+      <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/_libraries/ASM%20%5B_LIBRARY%5D%20other.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ASM [_LIBRARY] table.lua" type="script" desc="ASM [_LIBRARY] table.lua">
+      <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/_libraries/ASM%20%5B_LIBRARY%5D%20table.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="ENVELOPE">
+    <reapack name="ASM [ENV] Remove automation items and select next.lua" type="script" desc="ASM [ENV] Remove automation items and select next">
+      <version name="1.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/ENVELOPE/ASM%20%5BENV%5D%20Remove%20automation%20items%20and%20select%20next.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ASM [ENV] Remove automation points and select next _underlying envelope.lua" type="script" desc="ASM [ENV] Remove automation points and select next _underlying envelope">
+      <version name="1.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/ENVELOPE/ASM%20%5BENV%5D%20Remove%20automation%20points%20and%20select%20next%20_underlying%20envelope.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ASM [ENV] Set new value for selected automation points _automation items.lua" type="script" desc="ASM [ENV] Set new value for selected automation points _automation items">
+      <version name="1.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/ENVELOPE/ASM%20%5BENV%5D%20Set%20new%20value%20for%20selected%20automation%20points%20_automation%20items.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ASM [ENV] Set new value for selected automation points _automation items_New.lua" type="script" desc="ASM [ENV] Set new value for selected automation points _automation items">
+      <version name="1.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/ENVELOPE/ASM%20%5BENV%5D%20Set%20new%20value%20for%20selected%20automation%20points%20_automation%20items_New.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ASM [ENV] Set new value for selected automation points _automation items_TEST.lua" type="script" desc="ASM [ENV] Set new value for selected automation points _automation items">
+      <version name="1.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/ENVELOPE/ASM%20%5BENV%5D%20Set%20new%20value%20for%20selected%20automation%20points%20_automation%20items_TEST.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ASM [ENV] Set new value for selected automation points _underlying envelope.lua" type="script" desc="ASM [ENV] Set new value for selected automation points _underlying envelope">
+      <version name="1.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/ENVELOPE/ASM%20%5BENV%5D%20Set%20new%20value%20for%20selected%20automation%20points%20_underlying%20envelope.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="GUI">
+    <reapack name="ASM [GUI CONTROL] ASM Control panel+.lua" type="script" desc="ASM [GUI CONTROL] ASM Control panel">
+      <version name="1.1.5" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[+ Add LMB swipe to change button state
+# Change behavior color functional button on left side ]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/GUI/ASM%20%5BGUI%20CONTROL%5D%20ASM%20Control%20panel+.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ASM [GUI CONTROL] ASM Control panel.lua" type="script" desc="ASM [GUI CONTROL] ASM Control panel">
+      <version name="1.1.6" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[# Update code]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/GUI/ASM%20%5BGUI%20CONTROL%5D%20ASM%20Control%20panel.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ASM [GUI DEVELOPER] Show gfx.getchar() number (img).lua" type="script" desc="ASM [GUI DEVELOPER] Show gfx.getchar() number (img)">
+      <version name="1.0.1" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[# Update code]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/GUI/ASM%20%5BGUI%20DEVELOPER%5D%20Show%20gfx.getchar()%20number%20(img).lua</source>
+        <source file="../_images/ASM GUI DEVELOPER Show gfx.getchar() number (img)/ASM.png">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/_images/ASM%20GUI%20DEVELOPER%20Show%20gfx.getchar()%20number%20(img)/ASM.png</source>
+        <source file="../_images/ASM GUI DEVELOPER Show gfx.getchar() number (img)/BG.png">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/_images/ASM%20GUI%20DEVELOPER%20Show%20gfx.getchar()%20number%20(img)/BG.png</source>
+        <source file="../_images/ASM GUI DEVELOPER Show gfx.getchar() number (img)/zoom_minus.png">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/_images/ASM%20GUI%20DEVELOPER%20Show%20gfx.getchar()%20number%20(img)/zoom_minus.png</source>
+        <source file="../_images/ASM GUI DEVELOPER Show gfx.getchar() number (img)/zoom_plus.png">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/_images/ASM%20GUI%20DEVELOPER%20Show%20gfx.getchar()%20number%20(img)/zoom_plus.png</source>
+      </version>
+    </reapack>
+    <reapack name="ASM [GUI DEVELOPER] Show gfx.getchar() number.lua" type="script" desc="ASM [GUI DEVELOPER] Show gfx.getchar() number (GUI)">
+      <version name="1.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/GUI/ASM%20%5BGUI%20DEVELOPER%5D%20Show%20gfx.getchar()%20number.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ASM [GUI TRANSPORT] Record play stop pause state - Copy (2).lua" type="script" desc="ASM [GUI TRANSPORT] Record play stop pause state">
+      <version name="1.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/GUI/ASM%20%5BGUI%20TRANSPORT%5D%20Record%20play%20stop%20pause%20state%20-%20Copy%20(2).lua</source>
+      </version>
+    </reapack>
+    <reapack name="ASM [GUI TRANSPORT] Record play stop pause state - Copy (3).lua" type="script" desc="ASM [GUI TRANSPORT] Record play stop pause state">
+      <version name="1.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/GUI/ASM%20%5BGUI%20TRANSPORT%5D%20Record%20play%20stop%20pause%20state%20-%20Copy%20(3).lua</source>
+      </version>
+    </reapack>
+    <reapack name="ASM [GUI TRANSPORT] Record play stop pause state - Copy (4).lua" type="script" desc="ASM [GUI TRANSPORT] Record play stop pause state">
+      <version name="1.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/GUI/ASM%20%5BGUI%20TRANSPORT%5D%20Record%20play%20stop%20pause%20state%20-%20Copy%20(4).lua</source>
+      </version>
+    </reapack>
+    <reapack name="ASM [GUI TRANSPORT] Record play stop pause state - Copy (5).lua" type="script" desc="ASM [GUI TRANSPORT] Record play stop pause state">
+      <version name="1.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/GUI/ASM%20%5BGUI%20TRANSPORT%5D%20Record%20play%20stop%20pause%20state%20-%20Copy%20(5).lua</source>
+      </version>
+    </reapack>
+    <reapack name="ASM [GUI TRANSPORT] Record play stop pause state - Copy.lua" type="script" desc="ASM [GUI TRANSPORT] Record play stop pause state">
+      <version name="1.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/GUI/ASM%20%5BGUI%20TRANSPORT%5D%20Record%20play%20stop%20pause%20state%20-%20Copy.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ASM [GUI TRANSPORT] Record play stop pause state - MENU.lua" type="script" desc="ASM [GUI TRANSPORT] Record play stop pause state">
+      <version name="1.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/GUI/ASM%20%5BGUI%20TRANSPORT%5D%20Record%20play%20stop%20pause%20state%20-%20MENU.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ASM [GUI TRANSPORT] Record play stop pause state.lua" type="script" desc="ASM [GUI TRANSPORT] Record play stop pause state">
+      <version name="1.2.1" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[+ Update code]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/GUI/ASM%20%5BGUI%20TRANSPORT%5D%20Record%20play%20stop%20pause%20state.lua</source>
+        <source file="../_ini/ASM [GUI TRANSPORT] Record play stop pause state.ini">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/_ini/ASM%20%5BGUI%20TRANSPORT%5D%20Record%20play%20stop%20pause%20state.ini</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="ITEM">
+    <reapack name="ASM [ITEM] Duplicate items relative grid (smart) - Copy.lua" type="script" desc="ASM [ITEM] Duplicate items relative grid (smart)">
+      <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/ITEM/ASM%20%5BITEM%5D%20Duplicate%20items%20relative%20grid%20(smart)%20-%20Copy.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ASM [ITEM] Duplicate items relative grid (smart).lua" type="script" desc="ASM [ITEM] Duplicate items relative grid (smart)">
+      <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/ITEM/ASM%20%5BITEM%5D%20Duplicate%20items%20relative%20grid%20(smart).lua</source>
+      </version>
+    </reapack>
+    <reapack name="ASM [ITEM] Duplicate items relative grid (super smart 4-4 or 3-4).lua" type="script" desc="ASM [ITEM] Duplicate items relative grid (super smart 4-4 or 3-4)">
+      <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/ITEM/ASM%20%5BITEM%5D%20Duplicate%20items%20relative%20grid%20(super%20smart%204-4%20or%203-4).lua</source>
+      </version>
+    </reapack>
+    <reapack name="ASM [ITEM] Open item (contextual_editable) -midi in editor (and zoom)  -audio properties (toggle) -subproject.lua" type="script" desc="ASM [ITEM] Open item (contextual/editable): midi in editor (and zoom) / audio properties (toggle) / subproject">
+      <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/ITEM/ASM%20%5BITEM%5D%20Open%20item%20(contextual_editable)%20-midi%20in%20editor%20(and%20zoom)%20%20-audio%20properties%20(toggle)%20-subproject.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ASM [ITEM] Remove selected items and select next (keep the selection of the extreme element).lua" type="script" desc="ASM [ITEM] Remove selected items and select next (keep the selection of the extreme element)">
+      <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/ITEM/ASM%20%5BITEM%5D%20Remove%20selected%20items%20and%20select%20next%20(keep%20the%20selection%20of%20the%20extreme%20element).lua</source>
+      </version>
+    </reapack>
+    <reapack name="ASM [ITEM] Remove selected items and select next.lua" type="script" desc="ASM [ITEM] Remove selected items and select next">
+      <version name="1.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/ITEM/ASM%20%5BITEM%5D%20Remove%20selected%20items%20and%20select%20next.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ASM edit [ITEM] Duplicate items relative grid - Copy - Copy.lua" type="script" desc="ASM [ITEM] Duplicate items relative grid">
+      <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/ITEM/ASM%20edit%20%5BITEM%5D%20Duplicate%20items%20relative%20grid%20-%20Copy%20-%20Copy.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ASM edit [ITEM] Duplicate items relative grid - Copy.lua" type="script" desc="ASM [ITEM] Duplicate items relative grid">
+      <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/ITEM/ASM%20edit%20%5BITEM%5D%20Duplicate%20items%20relative%20grid%20-%20Copy.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ASM edit [ITEM] Duplicate items relative grid_01.lua" type="script" desc="ASM [ITEM] Duplicate items relative grid">
+      <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/ITEM/ASM%20edit%20%5BITEM%5D%20Duplicate%20items%20relative%20grid_01.lua</source>
+      </version>
+    </reapack>
+    <reapack name="BACKUP ASM [ITEM] Duplicate items relative grid (smart) - Copy - Copy 2.lua" type="script" desc="ASM [ITEM] Duplicate items relative grid (smart)">
+      <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/ITEM/BACKUP%20ASM%20%5BITEM%5D%20Duplicate%20items%20relative%20grid%20(smart)%20-%20Copy%20-%20Copy%202.lua</source>
+      </version>
+    </reapack>
+    <reapack name="BACKUP ASM [ITEM] Duplicate items relative grid (smart) - Copy - Copy 3.lua" type="script" desc="ASM [ITEM] Duplicate items relative grid (smart)">
+      <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/ITEM/BACKUP%20ASM%20%5BITEM%5D%20Duplicate%20items%20relative%20grid%20(smart)%20-%20Copy%20-%20Copy%203.lua</source>
+      </version>
+    </reapack>
+    <reapack name="BACKUP ASM [ITEM] Duplicate items relative grid (smart) - Copy - Copy.lua" type="script" desc="ASM [ITEM] Duplicate items relative grid (smart)">
+      <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/ITEM/BACKUP%20ASM%20%5BITEM%5D%20Duplicate%20items%20relative%20grid%20(smart)%20-%20Copy%20-%20Copy.lua</source>
+      </version>
+    </reapack>
+    <reapack name="BACKUP ASM edit [ITEM] Duplicate items relative grid_01 - Copy.lua" type="script" desc="ASM [ITEM] Duplicate items relative grid">
+      <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/ITEM/BACKUP%20ASM%20edit%20%5BITEM%5D%20Duplicate%20items%20relative%20grid_01%20-%20Copy.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="MIDI">
+    <reapack name="ASM [NOTES] Set average velocity for selected notes in active take (with user window).lua" type="script" desc="ASM [NOTES] Set average velocity for selected notes in active take (with user window)">
+      <version name="1.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/MIDI/ASM%20%5BNOTES%5D%20Set%20average%20velocity%20for%20selected%20notes%20in%20active%20take%20(with%20user%20window).lua</source>
+      </version>
+    </reapack>
+    <reapack name="ASM [NOTES] Set average velocity for selected notes in active take.lua" type="script" desc="ASM [NOTES] Set average velocity for selected notes in active take">
+      <version name="1.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/MIDI/ASM%20%5BNOTES%5D%20Set%20average%20velocity%20for%20selected%20notes%20in%20active%20take.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ASM [NOTES] Set max velocity for selected notes in active take.lua" type="script" desc="ASM [NOTES] Set max velocity for selected notes in active take">
+      <version name="1.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/MIDI/ASM%20%5BNOTES%5D%20Set%20max%20velocity%20for%20selected%20notes%20in%20active%20take.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ASM [NOTES] Set min velocity for selected notes in active take.lua" type="script" desc="ASM [NOTES] Set min velocity for selected notes in active take">
+      <version name="1.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/MIDI/ASM%20%5BNOTES%5D%20Set%20min%20velocity%20for%20selected%20notes%20in%20active%20take.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="SEPARATES">
+    <reapack name="••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••.lua" type="script" desc="••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••.lua">
+      <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/SEPARATES/%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2%E2%80%A2.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="TRACK">
+    <reapack name="ASM [TRACK] FX (except VSTi) bypass on selected tracks.lua" type="script" desc="Script: FX (except VSTi) bypass on selected tracks">
+      <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/TRACK/ASM%20%5BTRACK%5D%20FX%20(except%20VSTi)%20bypass%20on%20selected%20tracks.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ASM [TRACK] FX (except VSTi) offline on selected tracks.lua" type="script" desc="ASM [TRACK] FX (except VSTi) offline on selected tracks">
+      <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/TRACK/ASM%20%5BTRACK%5D%20FX%20(except%20VSTi)%20offline%20on%20selected%20tracks.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ASM [TRACK] FX (except VSTi) online on selected tracks.lua" type="script" desc="ASM [TRACK] FX (except VSTi) online on selected tracks">
+      <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/TRACK/ASM%20%5BTRACK%5D%20FX%20(except%20VSTi)%20online%20on%20selected%20tracks.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ASM [TRACK] FX (except VSTi) unbypass selected tracks.lua" type="script" desc="ASM [TRACK] FX (except VSTi) unbypass selected tracks">
+      <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/TRACK/ASM%20%5BTRACK%5D%20FX%20(except%20VSTi)%20unbypass%20selected%20tracks.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ASM [TRACK] FX (VSTi only) bypass on selected tracks.lua" type="script" desc="ASM [TRACK] FX (VSTi only) bypass on selected tracks">
+      <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/TRACK/ASM%20%5BTRACK%5D%20FX%20(VSTi%20only)%20bypass%20on%20selected%20tracks.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ASM [TRACK] FX (VSTi only) offline on selected tracks.lua" type="script" desc="ASM [TRACK] FX (VSTi only) offline on selected tracks">
+      <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/TRACK/ASM%20%5BTRACK%5D%20FX%20(VSTi%20only)%20offline%20on%20selected%20tracks.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ASM [TRACK] FX (VSTi only) online on selected tracks.lua" type="script" desc="ASM [TRACK] FX (VSTi only) online on selected tracks">
+      <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/TRACK/ASM%20%5BTRACK%5D%20FX%20(VSTi%20only)%20online%20on%20selected%20tracks.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ASM [TRACK] FX (VSTi only) unbypass selected tracks.lua" type="script" desc="ASM [TRACK] FX (VSTi only) unbypass selected tracks">
+      <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/TRACK/ASM%20%5BTRACK%5D%20FX%20(VSTi%20only)%20unbypass%20selected%20tracks.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ASM [TRACK] Toggle FX (except VSTi) bypass or unbypass on selected tracks.lua" type="script" desc="ASM [TRACK] Toggle FX (except VSTi) bypass/unbypass on selected tracks">
+      <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/TRACK/ASM%20%5BTRACK%5D%20Toggle%20FX%20(except%20VSTi)%20bypass%20or%20unbypass%20on%20selected%20tracks.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ASM [TRACK] Toggle FX (except VSTi) offline or online on selected tracks.lua" type="script" desc="ASM [TRACK] Toggle FX (except VSTi) offline/online on selected tracks">
+      <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/TRACK/ASM%20%5BTRACK%5D%20Toggle%20FX%20(except%20VSTi)%20offline%20or%20online%20on%20selected%20tracks.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ASM [TRACK] Toggle FX (VSTi only) bypass or unbypass on selected tracks.lua" type="script" desc="ASM [TRACK] Toggle FX (VSTi only) bypass/unbypass on selected tracks">
+      <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/TRACK/ASM%20%5BTRACK%5D%20Toggle%20FX%20(VSTi%20only)%20bypass%20or%20unbypass%20on%20selected%20tracks.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ASM [TRACK] Toggle FX (VSTi only) offline or online on selected tracks.lua" type="script" desc="ASM [TRACK] Toggle FX (VSTi only) offline/online on selected tracks">
+      <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/TRACK/ASM%20%5BTRACK%5D%20Toggle%20FX%20(VSTi%20only)%20offline%20or%20online%20on%20selected%20tracks.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ASM [TRACK] Toggle mute tracks (solo others) _normal solo.lua" type="script" desc="ASM [TRACK] Toggle mute tracks (solo others) _normal solo">
+      <version name="1.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/TRACK/ASM%20%5BTRACK%5D%20Toggle%20mute%20tracks%20(solo%20others)%20_normal%20solo.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ASM [TRACK] Toggle mute tracks (solo others) _soloed in place.lua" type="script" desc="ASM [TRACK] Toggle mute tracks (solo others) _soloed in place">
+      <version name="1.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/TRACK/ASM%20%5BTRACK%5D%20Toggle%20mute%20tracks%20(solo%20others)%20_soloed%20in%20place.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ASM [TRACK] Toggle solo tracks (mute others) _normal solo.lua" type="script" desc="ASM [TRACK] Toggle solo tracks (mute others) _normal solo">
+      <version name="1.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/TRACK/ASM%20%5BTRACK%5D%20Toggle%20solo%20tracks%20(mute%20others)%20_normal%20solo.lua</source>
+      </version>
+    </reapack>
+    <reapack name="ASM [TRACK] Toggle solo tracks (mute others) _soloed in place.lua" type="script" desc="ASM [TRACK] Toggle solo tracks (mute others) _soloed in place">
+      <version name="1.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/TRACK/ASM%20%5BTRACK%5D%20Toggle%20solo%20tracks%20(mute%20others)%20_soloed%20in%20place.lua</source>
+      </version>
+    </reapack>
+  </category>
+</index>
