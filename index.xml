@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="AmelianceSkyMusic scripts" commit="86fce2842459c947863effd027fcc053f3263268">
+<index version="1" name="AmelianceSkyMusic scripts" commit="f328adf9016fc263c6c369b5595aafee261fc885">
   <category name="_libraries">
-    <reapack name="ASM [_LIBRARY] asm.lua" type="script" desc="asm_class.lua">
+    <reapack name="ASM [_LIBRARY] asm.lua" type="script" desc="ASM [_LIBRARY] asm.lua">
       <version name="1.0.2" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
         <changelog><![CDATA[+ Add new functions for work with color]]></changelog>
         <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/_libraries/ASM%20%5B_LIBRARY%5D%20asm.lua</source>
@@ -35,6 +35,10 @@
       <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
         <changelog><![CDATA[+ Initial release]]></changelog>
         <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/_libraries/ASM%20%5B_LIBRARY%5D%20other.lua</source>
+      </version>
+      <version name="1.0.1" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T13:13:15Z">
+        <changelog><![CDATA[+ Update code]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/f328adf9016fc263c6c369b5595aafee261fc885/_libraries/ASM%20%5B_LIBRARY%5D%20other.lua</source>
       </version>
     </reapack>
     <reapack name="ASM [_LIBRARY] table.lua" type="script" desc="ASM [_LIBRARY] table.lua">
