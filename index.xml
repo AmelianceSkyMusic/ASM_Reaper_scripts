@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="AmelianceSkyMusic scripts" commit="91b9d88d11dded108b0e6571f7902d89f6a90ea0">
+<index version="1" name="AmelianceSkyMusic scripts" commit="058d4f5ecde2839c95c9be5c7cd351909f969a59">
   <category name="_libraries">
     <reapack name="ASM [_LIBRARY] asm.lua" type="script" desc="asm_class.lua">
       <version name="1.0.2" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
@@ -266,10 +266,10 @@
     </reapack>
   </category>
   <category name="TRANSPORT">
-    <reapack name="ASM [TRANSPORT] Record and change arm track color.lua" type="script" desc="ASM [TRANSPORT] Record and change arm track color">
-      <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T08:05:34Z">
+    <reapack name="ASM [TRANSPORT] Change track color if it is recording.lua" type="script" desc="ASM [TRANSPORT] Change track color if it is recording">
+      <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T09:17:42Z">
         <changelog><![CDATA[+ Initial release]]></changelog>
-        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/91b9d88d11dded108b0e6571f7902d89f6a90ea0/TRANSPORT/ASM%20%5BTRANSPORT%5D%20Record%20and%20change%20arm%20track%20color.lua</source>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/058d4f5ecde2839c95c9be5c7cd351909f969a59/TRANSPORT/ASM%20%5BTRANSPORT%5D%20Change%20track%20color%20if%20it%20is%20recording.lua</source>
       </version>
     </reapack>
   </category>
