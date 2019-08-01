@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="AmelianceSkyMusic scripts" commit="058d4f5ecde2839c95c9be5c7cd351909f969a59">
+<index version="1" name="AmelianceSkyMusic scripts" commit="86fce2842459c947863effd027fcc053f3263268">
   <category name="_libraries">
     <reapack name="ASM [_LIBRARY] asm.lua" type="script" desc="asm_class.lua">
       <version name="1.0.2" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
         <changelog><![CDATA[+ Add new functions for work with color]]></changelog>
         <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/_libraries/ASM%20%5B_LIBRARY%5D%20asm.lua</source>
+      </version>
+      <version name="1.0.3" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T13:06:24Z">
+        <changelog><![CDATA[+ Update code]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/cec7757133559bc5027e97eee74fe2c797544734/_libraries/ASM%20%5B_LIBRARY%5D%20asm.lua</source>
       </version>
     </reapack>
     <reapack name="ASM [_LIBRARY] io.lua" type="script" desc="ASM [_LIBRARY] io.lua">
@@ -12,11 +16,19 @@
         <changelog><![CDATA[+ Update code]]></changelog>
         <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/_libraries/ASM%20%5B_LIBRARY%5D%20io.lua</source>
       </version>
+      <version name="1.0.2" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T13:06:24Z">
+        <changelog><![CDATA[+ Update code]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/cec7757133559bc5027e97eee74fe2c797544734/_libraries/ASM%20%5B_LIBRARY%5D%20io.lua</source>
+      </version>
     </reapack>
-    <reapack name="ASM [_LIBRARY] math.lua" type="script" desc="ASM [LIBRARY] math.lua">
+    <reapack name="ASM [_LIBRARY] math.lua" type="script" desc="ASM [_LIBRARY] math.lua">
       <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
         <changelog><![CDATA[+ Initial release]]></changelog>
         <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/_libraries/ASM%20%5B_LIBRARY%5D%20math.lua</source>
+      </version>
+      <version name="1.0.1" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T13:06:24Z">
+        <changelog><![CDATA[+ Update code]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/cec7757133559bc5027e97eee74fe2c797544734/_libraries/ASM%20%5B_LIBRARY%5D%20math.lua</source>
       </version>
     </reapack>
     <reapack name="ASM [_LIBRARY] other.lua" type="script" desc="ASM [_LIBRARY] other.lua">
@@ -29,6 +41,10 @@
       <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
         <changelog><![CDATA[+ Initial release]]></changelog>
         <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/_libraries/ASM%20%5B_LIBRARY%5D%20table.lua</source>
+      </version>
+      <version name="1.0.1" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T13:06:24Z">
+        <changelog><![CDATA[+ Update code]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/cec7757133559bc5027e97eee74fe2c797544734/_libraries/ASM%20%5B_LIBRARY%5D%20table.lua</source>
       </version>
     </reapack>
   </category>
@@ -116,9 +132,9 @@
       </version>
     </reapack>
     <reapack name="ASM [ITEM] Open item (contextual_editable) -midi in editor (and zoom)  -audio properties (toggle) -subproject.lua" type="script" desc="ASM [ITEM] Open item (contextual/editable): midi in editor (and zoom) / audio properties (toggle) / subproject">
-      <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
+      <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T13:08:59Z">
         <changelog><![CDATA[+ Initial release]]></changelog>
-        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/ITEM/ASM%20%5BITEM%5D%20Open%20item%20(contextual_editable)%20-midi%20in%20editor%20(and%20zoom)%20%20-audio%20properties%20(toggle)%20-subproject.lua</source>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/86fce2842459c947863effd027fcc053f3263268/ITEM/ASM%20%5BITEM%5D%20Open%20item%20(contextual_editable)%20-midi%20in%20editor%20(and%20zoom)%20%20-audio%20properties%20(toggle)%20-subproject.lua</source>
       </version>
     </reapack>
     <reapack name="ASM [ITEM] Remove selected items and select next (keep the selection of the extreme element).lua" type="script" desc="ASM [ITEM] Remove selected items and select next (keep the selection of the extreme element)">
