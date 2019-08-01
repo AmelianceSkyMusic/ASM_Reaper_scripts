@@ -15,7 +15,7 @@
   + Initial release
 --]]
 
-script_title = "ASM [SCRIPT] Remove automation item(s) and select next"
+script_title = "ASM [ENV] Remove automation items and select next"
 
 function Msg(param) reaper.ShowConsoleMsg(tostring(param).."\n") end
   
