@@ -1,6 +1,6 @@
 --[[
  * ReaScript Name: ASM [TRANSPORT] Change track color if it is recording
- * Instructions:  Add this script in custom action after "record" action. DON'T USE "TERMINATE INSTANCE"
+ * Instructions:  Add this script in custom action after "record" action. DON'T USE "TERMINATE INSTANCE". https://youtu.be/KRfccMzH6ZI
  * Author: Rsay Uaie (Ameliance SkyMusic)
  * Author URI: https://forum.cockos.com/member.php?u=123975
  * Licence: GPL v3
