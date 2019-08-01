@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="AmelianceSkyMusic scripts" commit="8e0d6194b8ad18e5e8639f928b58093e9ce814dd">
+<index version="1" name="AmelianceSkyMusic scripts" commit="6f7ccd0c87f47fdc5be0e9ac1a877b1275cd92a9">
   <category name="_libraries">
     <reapack name="ASM [_LIBRARY] asm.lua" type="script" desc="asm_class.lua">
       <version name="1.0.2" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
@@ -63,18 +63,6 @@
       <version name="1.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
         <changelog><![CDATA[+ Initial release]]></changelog>
         <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/ENVELOPE/ASM%20%5BENV%5D%20Set%20new%20value%20for%20selected%20automation%20points%20_automation%20items.lua</source>
-      </version>
-    </reapack>
-    <reapack name="ASM [ENV] Set new value for selected automation points _automation items_New.lua" type="script" desc="ASM [ENV] Set new value for selected automation points _automation items">
-      <version name="1.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
-        <changelog><![CDATA[+ Initial release]]></changelog>
-        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/ENVELOPE/ASM%20%5BENV%5D%20Set%20new%20value%20for%20selected%20automation%20points%20_automation%20items_New.lua</source>
-      </version>
-    </reapack>
-    <reapack name="ASM [ENV] Set new value for selected automation points _automation items_TEST.lua" type="script" desc="ASM [ENV] Set new value for selected automation points _automation items">
-      <version name="1.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
-        <changelog><![CDATA[+ Initial release]]></changelog>
-        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/ENVELOPE/ASM%20%5BENV%5D%20Set%20new%20value%20for%20selected%20automation%20points%20_automation%20items_TEST.lua</source>
       </version>
     </reapack>
     <reapack name="ASM [ENV] Set new value for selected automation points _underlying envelope.lua" type="script" desc="ASM [ENV] Set new value for selected automation points _underlying envelope">
