@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="AmelianceSkyMusic scripts" commit="28e3c8ce7e9990d47ab343f515d003dc26ea68b2">
+<index version="1" name="AmelianceSkyMusic scripts" commit="fdb09342dfa2824107c84d32992e5f902e23f2ea">
   <category name="_libraries">
     <reapack name="ASM [_LIBRARY] asm.lua" type="script" desc="asm_class.lua">
       <version name="1.0.2" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
@@ -29,6 +29,20 @@
       <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
         <changelog><![CDATA[+ Initial release]]></changelog>
         <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/_libraries/ASM%20%5B_LIBRARY%5D%20table.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="CUSTOM">
+    <reapack name="ASM custom [ITEM] Select and move to item in next track (save cursor position).lua" type="script" desc="ASM custom [ITEM] Select and move to item in previous track (save cursor position)">
+      <version name="1.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:44:39Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/fdb09342dfa2824107c84d32992e5f902e23f2ea/CUSTOM/ASM%20custom%20%5BITEM%5D%20Select%20and%20move%20to%20item%20in%20next%20track%20(save%20cursor%20position).lua</source>
+      </version>
+    </reapack>
+    <reapack name="ASM custom [ITEM] Select and move to item in previous track (save cursor position).lua" type="script" desc="ASM custom [ITEM] Select and move to item in previous track (save cursor position)">
+      <version name="1.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:44:39Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/fdb09342dfa2824107c84d32992e5f902e23f2ea/CUSTOM/ASM%20custom%20%5BITEM%5D%20Select%20and%20move%20to%20item%20in%20previous%20track%20(save%20cursor%20position).lua</source>
       </version>
     </reapack>
   </category>
