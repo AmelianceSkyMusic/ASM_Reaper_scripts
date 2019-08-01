@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="AmelianceSkyMusic scripts" commit="fdb09342dfa2824107c84d32992e5f902e23f2ea">
+<index version="1" name="AmelianceSkyMusic scripts" commit="8e0d6194b8ad18e5e8639f928b58093e9ce814dd">
   <category name="_libraries">
     <reapack name="ASM [_LIBRARY] asm.lua" type="script" desc="asm_class.lua">
       <version name="1.0.2" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
@@ -85,13 +85,6 @@
     </reapack>
   </category>
   <category name="GUI">
-    <reapack name="ASM [GUI CONTROL] ASM Control panel+.lua" type="script" desc="ASM [GUI CONTROL] ASM Control panel">
-      <version name="1.1.5" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
-        <changelog><![CDATA[+ Add LMB swipe to change button state
-# Change behavior color functional button on left side ]]></changelog>
-        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/GUI/ASM%20%5BGUI%20CONTROL%5D%20ASM%20Control%20panel+.lua</source>
-      </version>
-    </reapack>
     <reapack name="ASM [GUI CONTROL] ASM Control panel.lua" type="script" desc="ASM [GUI CONTROL] ASM Control panel">
       <version name="1.1.6" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
         <changelog><![CDATA[# Update code]]></changelog>
@@ -111,36 +104,6 @@
     <reapack name="ASM [GUI DEVELOPER] Show gfx.getchar() number.lua" type="script" desc="ASM [GUI DEVELOPER] Show gfx.getchar() number (GUI)">
       <version name="1.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
         <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/GUI/ASM%20%5BGUI%20DEVELOPER%5D%20Show%20gfx.getchar()%20number.lua</source>
-      </version>
-    </reapack>
-    <reapack name="ASM [GUI TRANSPORT] Record play stop pause state - Copy (2).lua" type="script" desc="ASM [GUI TRANSPORT] Record play stop pause state">
-      <version name="1.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
-        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/GUI/ASM%20%5BGUI%20TRANSPORT%5D%20Record%20play%20stop%20pause%20state%20-%20Copy%20(2).lua</source>
-      </version>
-    </reapack>
-    <reapack name="ASM [GUI TRANSPORT] Record play stop pause state - Copy (3).lua" type="script" desc="ASM [GUI TRANSPORT] Record play stop pause state">
-      <version name="1.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
-        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/GUI/ASM%20%5BGUI%20TRANSPORT%5D%20Record%20play%20stop%20pause%20state%20-%20Copy%20(3).lua</source>
-      </version>
-    </reapack>
-    <reapack name="ASM [GUI TRANSPORT] Record play stop pause state - Copy (4).lua" type="script" desc="ASM [GUI TRANSPORT] Record play stop pause state">
-      <version name="1.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
-        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/GUI/ASM%20%5BGUI%20TRANSPORT%5D%20Record%20play%20stop%20pause%20state%20-%20Copy%20(4).lua</source>
-      </version>
-    </reapack>
-    <reapack name="ASM [GUI TRANSPORT] Record play stop pause state - Copy (5).lua" type="script" desc="ASM [GUI TRANSPORT] Record play stop pause state">
-      <version name="1.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
-        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/GUI/ASM%20%5BGUI%20TRANSPORT%5D%20Record%20play%20stop%20pause%20state%20-%20Copy%20(5).lua</source>
-      </version>
-    </reapack>
-    <reapack name="ASM [GUI TRANSPORT] Record play stop pause state - Copy.lua" type="script" desc="ASM [GUI TRANSPORT] Record play stop pause state">
-      <version name="1.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
-        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/GUI/ASM%20%5BGUI%20TRANSPORT%5D%20Record%20play%20stop%20pause%20state%20-%20Copy.lua</source>
-      </version>
-    </reapack>
-    <reapack name="ASM [GUI TRANSPORT] Record play stop pause state - MENU.lua" type="script" desc="ASM [GUI TRANSPORT] Record play stop pause state">
-      <version name="1.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
-        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/GUI/ASM%20%5BGUI%20TRANSPORT%5D%20Record%20play%20stop%20pause%20state%20-%20MENU.lua</source>
       </version>
     </reapack>
     <reapack name="ASM [GUI TRANSPORT] Record play stop pause state.lua" type="script" desc="ASM [GUI TRANSPORT] Record play stop pause state">
