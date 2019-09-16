@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="AmelianceSkyMusic scripts" commit="f328adf9016fc263c6c369b5595aafee261fc885">
+<index version="1" name="AmelianceSkyMusic scripts" commit="82f2e2bd690918ebf16ff2b5a73cf28349a3bf78">
   <category name="_libraries">
     <reapack name="ASM [_LIBRARY] asm.lua" type="script" desc="ASM [_LIBRARY] asm.lua">
       <version name="1.0.2" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
@@ -133,6 +133,12 @@
       <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
         <changelog><![CDATA[+ Initial release]]></changelog>
         <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/28e3c8ce7e9990d47ab343f515d003dc26ea68b2/ITEM/ASM%20%5BITEM%5D%20Duplicate%20items%20relative%20grid%20(super%20smart%204-4%20or%203-4).lua</source>
+      </version>
+    </reapack>
+    <reapack name="ASM [ITEM] Glue (midi items only).lua" type="script" desc="ASM [ITEM] Glue (midi items only)">
+      <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-09-16T13:07:15Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/82f2e2bd690918ebf16ff2b5a73cf28349a3bf78/ITEM/ASM%20%5BITEM%5D%20Glue%20(midi%20items%20only).lua</source>
       </version>
     </reapack>
     <reapack name="ASM [ITEM] Open item (contextual_editable) -midi in editor (and zoom)  -audio properties (toggle) -subproject.lua" type="script" desc="ASM [ITEM] Open item (contextual/editable): midi in editor (and zoom) / audio properties (toggle) / subproject">
