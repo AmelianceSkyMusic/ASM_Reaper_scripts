@@ -4,19 +4,18 @@
  * Author URI: https://forum.cockos.com/member.php?u=123975
  * Licence: GPL v3
  * REAPER: 5.0
- * Version: 1.0.1
+ * Version: 1.0.0
 --]]
 
 --[[
  * Changelog:
  * v1.0.0 (2019-03-16)
   + Initial release
- * v1.0.1 (2019-08-01) 
-  + Update code
 --]]
 
 ----------------------------------------------------------------------
 ------------------------------ OTHER ---------------------------------
 ----------------------------------------------------------------------
 
-function Msg(a)reaper.ShowConsoleMsg(tostring(a).."\n")end;reaper.ShowConsoleMsg("")
+function Msg(param) reaper.ShowConsoleMsg(tostring(param).."\n") end
+reaper.ShowConsoleMsg("")
