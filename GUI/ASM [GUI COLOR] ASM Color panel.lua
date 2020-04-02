@@ -7,7 +7,7 @@
  * REAPER: 5.0
  * Version: 1.0.2
  * Description: Colorize track items and items
- * Provides: ../_ini/ASM [GUI COLOR] ASM Color panel/*.{ini}
+ * Provides: ../_ini/*.{ini}
 --]]
 
 --[[
