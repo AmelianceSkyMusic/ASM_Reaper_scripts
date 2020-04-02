@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="AmelianceSkyMusic scripts" commit="e059cfa5cbb94ed1560fea929c730ba467e69a73">
+<index version="1" name="AmelianceSkyMusic scripts" commit="c006d3945c0e2e7c18f385130714c3873202610b">
   <category name="_libraries">
     <reapack name="ASM [_LIBRARY] asm.lua" type="script" desc="ASM [_LIBRARY] asm.lua">
       <version name="1.0.2" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
@@ -9,6 +9,10 @@
       <version name="1.0.3" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T13:06:24Z">
         <changelog><![CDATA[+ Add new functions for work with window state]]></changelog>
         <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/e059cfa5cbb94ed1560fea929c730ba467e69a73/_libraries/ASM%20%5B_LIBRARY%5D%20asm.lua</source>
+      </version>
+      <version name="1.0.4" author="Rsay Uaie (Ameliance SkyMusic)" time="2020-04-02T12:30:45Z">
+        <changelog><![CDATA[+ Add new functions for work with window state]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/c006d3945c0e2e7c18f385130714c3873202610b/_libraries/ASM%20%5B_LIBRARY%5D%20asm.lua</source>
       </version>
     </reapack>
     <reapack name="ASM [_LIBRARY] buttons.lua" type="script" desc="ASM [_LIBRARY] buttons.lua">
