@@ -4,12 +4,14 @@
  * Author URI: https://forum.cockos.com/member.php?u=123975
  * Licence: GPL v3
  * REAPER: 5.0
- * Version: 1.0.0
+ * Version: 1.0.1
 --]]
 
 --[[
  * Changelog:
  * v1.0.0 (2020-04-01)
+  + Initial release
+* v1.0.1 (2020-04-02)
   + Initial release
 --]]
 
@@ -51,7 +53,9 @@ function Element:new_elem(x_btn_position, y_btn_position, w_btn_width, h_btn_hei
                           border_r_pressed_2, border_g_pressed_2, border_b_pressed_2, border_a_pressed_2,
                           border_r_hover_2, border_g_hover_2, border_b_hover_2, border_a_hover_2,
                           btn_text_2, font_name_2, font_size_2, font_type_2,
-                          font_r_2, font_g_2, font_b_2, font_a_2,                         
+                          font_r_2, font_g_2, font_b_2, font_a_2,
+                          
+                          --gfx.blit(bt_img_numb, 1, 0, bt_img_src_x, bt_img_src_y, bt_img_src_w, bt_img_src_h, x, y, w, h)
                           
                           func_01, func_02, func_03, func_04, func_05, func_06, func_07, func_08, func_09, func_10,
                           func_11, func_12, func_13, func_14, func_15, func_16, func_17, func_18, func_19, func_20,
@@ -141,6 +145,8 @@ function Button:create()
   if font_size_2 ~= nil then font_size_2 = font_size_2*zoom_index end
   if text_1 == nil then text_1 = '' end
   if text_2 == nil then text_2 = '' end
+  --if border_1 then border_1 = border_1*zoom_index end
+  --if border_2 then border_2 = border_2*zoom_index end
   
   LMB   = (gfx.mouse_cap & 1) ~= 0
   RMB   = (gfx.mouse_cap & 2) ~= 0
@@ -177,6 +183,7 @@ function Button:draw_bg()
   
     fr_x, fr_y, fr_w, fr_h = x, y, w, h
     x, y, w, h = x+border_1, y+border_1, w-border_1*2, h-border_1*2
+
     
     if button_type == "normal" then
       asm.setColor(border_r, border_g, border_b, border_a)

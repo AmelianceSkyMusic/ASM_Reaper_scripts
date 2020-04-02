@@ -4,7 +4,7 @@
  * Author URI: https://forum.cockos.com/member.php?u=123975
  * Licence: GPL v3
  * REAPER: 5.0
- * Version: 1.0.4
+ * Version: 1.0.5
 --]]
 
 --[[
@@ -19,6 +19,8 @@
   + Update code
  * v1.0.4 (2020-04-01)
   + Add new functions for work with window state
+ * v1.0.5 (2020-04-02)
+  + Update
 --]]
 
 asm = {
@@ -63,7 +65,7 @@ asm = {
 	getWindowState = function(script_win_title) --get active window srate form title
 	  local window_HWND =  reaper.JS_Window_Find(script_win_title, 1)
 	  local retval, window_state_w, window_state_h = reaper.JS_Window_GetClientSize(window_HWND)
-	  local retval, window_state_left, window_state_top, window_state_right, window_state_bottom = reaper.JS_Window_GetRect(window_HWND)
+    local retval, window_state_left, window_state_top, window_state_right, window_state_bottom = reaper.JS_Window_GetRect(window_HWND)
 	  return retval, window_HWND, window_state_w, window_state_h, window_state_left, window_state_top, window_state_right, window_state_bottom
 	end
   
