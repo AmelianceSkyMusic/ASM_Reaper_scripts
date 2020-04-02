@@ -89,7 +89,7 @@ function load_preference()
 
   local dock_state = reaper.HasExtState(script_win_title, "dock")
   if dock_state == true then
-    dock =  = tonumber(reaper.GetExtState(script_win_title, "dock"))
+    dock = tonumber(reaper.GetExtState(script_win_title, "dock"))
   end
     
 end
