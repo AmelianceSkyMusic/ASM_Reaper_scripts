@@ -5,7 +5,7 @@
  * Author URI: https://forum.cockos.com/member.php?u=123975
  * Licence: GPL v3
  * REAPER: 5.0
- * Version: 1.0.2
+ * Version: 1.0.3
  * Description: Colorize track items and items
 --]]
 
@@ -17,6 +17,8 @@
   + Save dock state
 * v1.0.2 (2020-04-02)
   + Update functionality
+* v1.0.3 (2020-04-02)
+  + Update
 --]]
 
 local script_title='ASM [GUI COLOR] ASM Color panel'
