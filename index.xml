@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="AmelianceSkyMusic scripts" commit="c006d3945c0e2e7c18f385130714c3873202610b">
+<index version="1" name="AmelianceSkyMusic scripts" commit="da40549e4e7bdec817dc3fcddc9089de1cc9596a">
   <category name="_libraries">
     <reapack name="ASM [_LIBRARY] asm.lua" type="script" desc="ASM [_LIBRARY] asm.lua">
       <version name="1.0.2" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
@@ -113,6 +113,10 @@
       <version name="1.0.0" author="Rsay Uaie (Ameliance SkyMusic)" time="2020-04-01T14:13:41Z">
         <changelog><![CDATA[+ Initial release]]></changelog>
         <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/56ab442aa27810040765e97c045bb79a1a472564/GUI/ASM%20%5BGUI%20COLOR%5D%20ASM%20Color%20panel.lua</source>
+      </version>
+      <version name="1.0.1" author="Rsay Uaie (Ameliance SkyMusic)" time="2020-04-02T13:14:31Z">
+        <changelog><![CDATA[+ Save dock state]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/da40549e4e7bdec817dc3fcddc9089de1cc9596a/GUI/ASM%20%5BGUI%20COLOR%5D%20ASM%20Color%20panel.lua</source>
       </version>
     </reapack>
     <reapack name="ASM [GUI CONTROL] ASM Control panel.lua" type="script" desc="ASM [GUI CONTROL] ASM Control panel">
