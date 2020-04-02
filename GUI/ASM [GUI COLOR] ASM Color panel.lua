@@ -84,7 +84,7 @@ local settings ={}
 local window_x_start, window_y_start, window_h_start, window_w_start, dock, zoom
 
 function reset_settings()
-  dock = 1
+  dock = 0
   zoom = 4
   window_x_start = 0
   window_y_start = 0
