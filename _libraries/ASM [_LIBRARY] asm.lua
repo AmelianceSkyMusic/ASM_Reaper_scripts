@@ -1,5 +1,5 @@
 --[[
- * ReaScript Name: asm_class.lua
+ * ReaScript Name: ASM [_LIBRARY] asm.lua
  * Author: Rsay Uaie (Ameliance SkyMusic)
  * Author URI: https://forum.cockos.com/member.php?u=123975
  * Licence: GPL v3
@@ -15,6 +15,8 @@
   + Add new functions for work with items
  * v1.0.2 (2019-05-12)
   + Add new functions for work with color
+ * v1.0.3 (2020-04-01)
+  + Add new functions for work with window state
 --]]
 
 asm = {
