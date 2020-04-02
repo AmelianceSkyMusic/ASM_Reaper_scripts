@@ -5,7 +5,7 @@
  * Author URI: https://forum.cockos.com/member.php?u=123975
  * Licence: GPL v3
  * REAPER: 5.0
- * Version: 1.0.0
+ * Version: 1.0.1
  * Description: Colorize track items and items
  * Provides: 
 --]]
@@ -14,6 +14,8 @@
  * Changelog:
  * v1.0.0 (2020-04-01)
   + Initial release
+* v1.0.1 (2020-04-02)
+  + Save dock state
 --]]
 
 local script_title='ASM [GUI COLOR] ASM Color panel'
@@ -68,6 +70,7 @@ local x_win_position = 0
 local y_win_position = 0
 local win_width = 0
 local win_height = 0
+local dock = 1
 function load_preference()
   
   local x_win_position_state = reaper.HasExtState(script_win_title, "x_win_position") 
@@ -83,6 +86,11 @@ function load_preference()
      win_width = tonumber(reaper.GetExtState(script_win_title, "win_width"))
      win_height = tonumber(reaper.GetExtState(script_win_title, "win_height"))
   end
+
+  local dock_state = reaper.HasExtState(script_win_title, "dock")
+  if dock_state == true then
+    dock =  = tonumber(reaper.GetExtState(script_win_title, "dock"))
+  end
     
 end
 load_preference()
@@ -97,6 +105,14 @@ function save_preference()
   local _, x_win_position, y_win_position, _, _ = gfx.dock(-1, 0, 0, 0, 0)
   reaper.SetExtState(script_win_title, "x_win_position", tostring(x_win_position), 1)
   reaper.SetExtState(script_win_title, "y_win_position", tostring(y_win_position), 1)
+
+  --reaper.DeleteExtState(script_win_title, "win_width", 1)
+  --reaper.DeleteExtState(script_win_title, "win_height", 1)
+  --reaper.DeleteExtState(script_win_title, "x_win_position", 1)
+  --reaper.DeleteExtState(script_win_title, "y_win_position", 1)
+
+  local dock_state, x_pos, y_pos, _, _ = gfx.dock(-1, 0, 0, 0, 0)
+  reaper.SetExtState(script_win_title, "dock", tostring(dock_state), 1)
 end
 
 ----------------------------------------------------------------------
@@ -369,6 +385,7 @@ end
   
   
   function func_01_MMB_change_button_color(btn_numb) --MMB
+    save_preference()
     apply, new_button_color = reaper.GR_SelectColor()
         --Msg (new_track_color)
     if apply == 1 then
@@ -425,7 +442,7 @@ end
   
   
   function func_01_LMB_add_color() --LMB
-  
+    save_preference()
     local color_buttons_count = 0
     if colors_buttons ~= nil then
       for key, value in pairs(colors_buttons) do
@@ -447,6 +464,7 @@ end
   end
   
   function func_01_LMB_ALT_remove_button(pos)
+    save_preference()
     colors_buttons_temp = {}
     i = 1
     if colors_buttons ~= nil then
@@ -618,7 +636,7 @@ end
 
 --reaper.Undo_BeginBlock()
 --
-gfx.init(script_win_title, win_width, win_height, 1, x_win_position, y_win_position)
+gfx.init(script_win_title, win_width, win_height, dock, x_win_position, y_win_position)
 --gfx.init(GUI.name, GUI.w, GUI.h, 0, x, y)
 --gfx.dock(1)--, 0, 0, window_w, window_h)
 MAIN()
