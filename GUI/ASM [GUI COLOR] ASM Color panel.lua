@@ -7,7 +7,6 @@
  * REAPER: 5.0
  * Version: 1.0.2
  * Description: Colorize track items and items
- * Provides: ../_ini/ASM Color Panel/*.{ini}
 --]]
 
 --[[
@@ -29,7 +28,7 @@ local proj = 0
 local info = debug.getinfo(1,'S')
 local script_path = info.source:match([[^@?(.*[\/])[^\/]-$]])
 local libraries_path = (script_path .. '../_libraries/'..'/')
-local ini_path = (script_path .. '../_ini/ASM Color panel/'..'/')
+local ini_path = (script_path ..'/')
 
 dofile(libraries_path .."ASM [_LIBRARY] ".."asm"..".lua")
 dofile(libraries_path .."ASM [_LIBRARY] ".."buttons"..".lua")
@@ -41,8 +40,8 @@ dofile(libraries_path .. "ASM [_LIBRARY] ".."other"..".lua")
 INI = dofile(libraries_path .."LIP"..".lua")
 
 ----------------------------------------------------------------------
-local color_palette_ini = 'color_palette'
-local settings_ini = 'settings'
+local color_palette_ini = 'ASM [GUI COLOR] ASM Color panel -color_palette'
+local settings_ini = 'ASM [GUI COLOR] ASM Color panel -settings'
 
 local is_color_palette_ini = reaper.file_exists(ini_path .. color_palette_ini ..'.ini')
 local is_settings_ini = reaper.file_exists(ini_path .. settings_ini ..'.ini')
