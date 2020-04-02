@@ -7,7 +7,7 @@
  * REAPER: 5.0
  * Version: 1.0.2
  * Description: Colorize track items and items
- * Provides: ../_ini/*.{ini}
+ * Provides: ../_ini/ASM Color Panel/*.{ini}
 --]]
 
 --[[
@@ -29,7 +29,7 @@ local proj = 0
 local info = debug.getinfo(1,'S')
 local script_path = info.source:match([[^@?(.*[\/])[^\/]-$]])
 local libraries_path = (script_path .. '../_libraries/'..'/')
-local ini_path = (script_path .. '../_ini/ASM [GUI COLOR] ASM Color panel/'..'/')
+local ini_path = (script_path .. '../_ini/ASM Color panel/'..'/')
 
 dofile(libraries_path .."ASM [_LIBRARY] ".."asm"..".lua")
 dofile(libraries_path .."ASM [_LIBRARY] ".."buttons"..".lua")
