@@ -4,7 +4,7 @@
  * Author URI: https://forum.cockos.com/member.php?u=123975
  * Licence: GPL v3
  * REAPER: 5.0
- * Version: 1.0.3
+ * Version: 1.0.4
 --]]
 
 --[[
@@ -15,7 +15,9 @@
   + Add new functions for work with items
  * v1.0.2 (2019-05-12)
   + Add new functions for work with color
- * v1.0.3 (2020-04-01)
+ * v1.0.3 (2019-08-01) 
+  + Update code
+ * v1.0.4 (2020-04-01)
   + Add new functions for work with window state
 --]]
 
