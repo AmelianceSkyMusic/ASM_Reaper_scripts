@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="4ec06013692fc28de5008329b5f012731a090973" name="AmelianceSkyMusic scripts">
+<index version="1" commit="5fab3bfa05814ee32765f32f85d63e7a8bb10f35" name="AmelianceSkyMusic scripts">
   <category name="_libraries">
     <reapack name="ASM [_LIBRARY] asm.lua" type="script" desc="ASM [_LIBRARY] asm.lua">
       <version name="1.0.2" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
@@ -27,6 +27,10 @@
       <version name="1.0.1" author="Rsay Uaie (Ameliance SkyMusic)" time="2020-04-02T19:38:35Z">
         <changelog><![CDATA[+ Initial release]]></changelog>
         <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/00b9c9d6b48a5103f3c6823b6c48db8f8a3bdf34/_libraries/ASM%20%5B_LIBRARY%5D%20buttons.lua</source>
+      </version>
+      <version name="1.0.2" author="Rsay Uaie (Ameliance SkyMusic)" time="2020-04-03T20:31:58Z">
+        <changelog><![CDATA[+ Update]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/5fab3bfa05814ee32765f32f85d63e7a8bb10f35/_libraries/ASM%20%5B_LIBRARY%5D%20buttons.lua</source>
       </version>
     </reapack>
     <reapack name="ASM [_LIBRARY] io.lua" type="script" desc="ASM [_LIBRARY] io.lua">
@@ -125,6 +129,10 @@
       <version name="1.0.3" author="Rsay Uaie (Ameliance SkyMusic)" time="2020-04-02T20:08:46Z">
         <changelog><![CDATA[+ Update]]></changelog>
         <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/4ec06013692fc28de5008329b5f012731a090973/GUI/ASM%20%5BGUI%20COLOR%5D%20ASM%20Color%20panel.lua</source>
+      </version>
+      <version name="1.0.4" author="Rsay Uaie (Ameliance SkyMusic)" time="2020-04-03T20:31:58Z">
+        <changelog><![CDATA[+ Add more functions]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/5fab3bfa05814ee32765f32f85d63e7a8bb10f35/GUI/ASM%20%5BGUI%20COLOR%5D%20ASM%20Color%20panel.lua</source>
       </version>
     </reapack>
     <reapack name="ASM [GUI CONTROL] ASM Control panel.lua" type="script" desc="ASM [GUI CONTROL] ASM Control panel">
