@@ -5,7 +5,7 @@
  * Author URI: https://forum.cockos.com/member.php?u=123975
  * Licence: GPL v3
  * REAPER: 5.0
- * Version: 1.0.5
+ * Version: 1.0.4
  * Description: Colorize track items and items
 --]]
 
@@ -20,8 +20,6 @@
 * v1.0.3 (2020-04-02)
   + Update
 * v1.0.4 (2020-04-02)
-  + Add more functions
-* v1.0.5 (2020-04-03)
   + Add more functions
 --]]
 
@@ -99,7 +97,7 @@ end]]
 -------------------------- load settings ------------------------------
 local settings_table ={}
 
-local dock, zoom, window_x_start, window_y_start, window_h_start, window_w_start, fallow_cursor_state
+local dock, zoom, window_x_start, window_y_start, window_h_start, window_w_start, fallow_cursor_state, close_after_coloring_state
 
 function reset_settings()
   dock = 0
@@ -109,6 +107,7 @@ function reset_settings()
   window_w_start = ((color_buttons_count+1)*button_size*zoom)
   window_h_start = button_size*zoom
   fallow_cursor_state = false
+  close_after_coloring_state = false
 end
 
 ----------------------------- save -----------------------------------------
@@ -150,6 +149,7 @@ get_color_buttons_count()
       window_w_start = settings_table.settings.window_w_start
       window_h_start = settings_table.settings.window_h_start
       fallow_cursor_state = settings_table.settings.fallow_cursor_state
+      close_after_coloring_state = settings_table.settings.close_after_coloring_state
       if not fallow_cursor_state then
         window_x_start = settings_table.settings.window_x_start
         window_y_start = settings_table.settings.window_y_start
@@ -209,7 +209,8 @@ function save_preference()
       ['window_y_start'] = window_y_get_in_closed,
       ['window_w_start'] = window_w_get_in_closed,
       ['window_h_start'] = window_h_get_in_closed,
-      ['fallow_cursor_state'] = fallow_cursor_state
+      ['fallow_cursor_state'] = fallow_cursor_state,
+      ['close_after_coloring_state'] = close_after_coloring_state
   }
 
  
@@ -258,18 +259,20 @@ end
 
 local menu_text = ''
 local menu_init = {
-  it_1_1   = 'Follow cursor position',
-  it_2_2   = '||Reset color palette',
-  it_3_3   = 'Reset settings',
-  it_4_4   = '||Show settings files location',
-  it_5_5   = '||Help',
-  it_6_6   = '||Close'
+  it_1   = 'Follow cursor position',
+  it_2   = 'Close after coloring',
+  it_3   = '||Reset color palette',
+  it_4   = 'Reset settings',
+  it_5   = '||Show settings files location',
+  it_6  = '||Help',
+  it_7   = '||Close'
 }
 
 local menu = asm_table.copy(menu_init)
 
 function menu_setF()
-  menu_text =      menu.it_1_1..    '|'..menu.it_2_2..    '|'..menu.it_3_3..    '|'..menu.it_4_4..    '|'..menu.it_5_5..  '|'..menu.it_6_6
+  menu_text =      menu.it_1..    '|'..menu.it_2..    '|'..menu.it_3..   
+              '|'..menu.it_4..    '|'..menu.it_5..    '|'..menu.it_6.. '|'..menu.it_7
   return menu_text
 end
 local menu_02_state = 1
@@ -397,6 +400,13 @@ function RMB_menu()
             fallow_cursor_state = true
           end
         elseif menu_set == 2 then
+          --delete_color_palette_file_menuF()
+         if close_after_coloring_state then
+           close_after_coloring_state = false
+         else
+           close_after_coloring_state = true
+          end
+        elseif menu_set == 3 then
          --[[ if menu_01_state == 1 and menu_02_state == 1 then
             menu.it_1_1 = '!'..menu_init.it_1_1
             menu.it_2_2 = menu_init.it_2_2
@@ -420,13 +430,13 @@ function RMB_menu()
           end]]--
           
           delete_color_palette_file_menuF()
-        elseif menu_set == 3 then
-          delete_settings_file_menuF()
         elseif menu_set == 4 then
-          open_settings_file_menuF() -- open settings file location
+          delete_settings_file_menuF()
         elseif menu_set == 5 then
-          help_menuF() --show help
+          open_settings_file_menuF() -- open settings file location
         elseif menu_set == 6 then
+          help_menuF() --show help
+        elseif menu_set == 7 then
           return save_preference(), gfx.quit(), reaper.atexit(MAIN)
         end
     end
@@ -503,6 +513,11 @@ function Button:LMB()
           func_04_LMB_ctrl(r_original_btn_color, g_original_btn_color, b_original_btn_color)
         end
       end
+      if close_after_coloring_state then
+        save_preference()
+        gfx.quit()
+        reaper.atexit(MAIN)
+      end
       button_up = false
     elseif LMB and Shift then
     elseif LMB and Alt then -- LMB+Alt
@@ -526,6 +541,11 @@ function Button:LMB()
             --func_02_LMB(param_01)
             func_02_LMB(r_original_btn_color, g_original_btn_color, b_original_btn_color)
           end
+        end
+        if close_after_coloring_state then
+          save_preference()
+          gfx.quit()
+          reaper.atexit(MAIN)
         end
         button_up = false
     end
@@ -999,9 +1019,15 @@ function MAIN()
 
 
   if fallow_cursor_state then
-    menu.it_1_1 = '!'..menu_init.it_1_1
+    menu.it_1 = '!'..menu_init.it_1
   else
-    menu.it_1_1 = menu_init.it_1_1
+    menu.it_1 = menu_init.it_1
+  end
+  
+  if close_after_coloring_state then
+    menu.it_2 = '!'..menu_init.it_2
+  else
+    menu.it_2 = menu_init.it_2
   end
  
   --[[if char == 27 then
