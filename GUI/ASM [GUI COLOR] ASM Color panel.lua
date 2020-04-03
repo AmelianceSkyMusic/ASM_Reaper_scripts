@@ -5,7 +5,7 @@
  * Author URI: https://forum.cockos.com/member.php?u=123975
  * Licence: GPL v3
  * REAPER: 5.0
- * Version: 1.0.4
+ * Version: 1.0.5
  * Description: Colorize track items and items
 --]]
 
@@ -20,6 +20,8 @@
 * v1.0.3 (2020-04-02)
   + Update
 * v1.0.4 (2020-04-02)
+  + Add more functions
+* v1.0.5 (2020-04-03)
   + Add more functions
 --]]
 
