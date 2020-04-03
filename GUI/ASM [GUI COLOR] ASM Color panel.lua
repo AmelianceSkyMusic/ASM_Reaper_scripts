@@ -1,11 +1,11 @@
 --[[
  * ReaScript Name: ASM [GUI COLOR] ASM Color panel
- * Instructions:  LMB - Change track color. RMB - Change Item color. MMB - Change pelette color. LMB+Alt - Remove palette color. For reset pelette remove all colors.
+ * Instructions:  See Help menu item (RMB on script window)
  * Author: Rsay Uaie (Ameliance SkyMusic)
  * Author URI: https://forum.cockos.com/member.php?u=123975
  * Licence: GPL v3
  * REAPER: 5.0
- * Version: 1.0.3
+ * Version: 1.0.4
  * Description: Colorize track items and items
 --]]
 
@@ -19,12 +19,27 @@
   + Update functionality
 * v1.0.3 (2020-04-02)
   + Update
+* v1.0.4 (2020-04-02)
+  + Add more functions
 --]]
 
 local script_title='ASM [GUI COLOR] ASM Color panel'
 local script_win_title = 'ASM Color Panel'
 
 local proj = 0
+
+----------------------------------------------------------------------
+
+local help_msg =
+'LMB\t\t— Change track / item color'..'\n'..
+'LMB+Ctrl\t\t— Change take color'..'\n'..
+'\n'..
+'MMB\t\t— Change palette panel color'..'\n'..
+'MMB+Ctrl\t— Take color from track / item'..'\n'..
+'\n'..
+'LMB+Alt\t\t— Remove palette color'..'\n'..
+'\n'..
+'AmelianceSkyMusic@gmail.com 2020'
 
 ----------------------------------------------------------------------
 local info = debug.getinfo(1,'S')
@@ -37,7 +52,7 @@ dofile(libraries_path .."ASM [_LIBRARY] ".."buttons"..".lua")
 --dofile(libraries_path .."ASM [_LIBRARY] ".."io"..".lua")
 dofile(libraries_path .. "ASM [_LIBRARY] ".."math"..".lua")
 dofile(libraries_path .. "ASM [_LIBRARY] ".."other"..".lua")
---dofile(libraries_path .."ASM [_LIBRARY] ".."table"..".lua")
+dofile(libraries_path .."ASM [_LIBRARY] ".."table"..".lua")
 
 INI = dofile(libraries_path .."LIP"..".lua")
 
@@ -51,6 +66,7 @@ local is_settings_ini = reaper.file_exists(ini_path .. settings_ini ..'.ini')
 
 ----------------------------------------------------------------------
 local button_size = 10
+local context_focus
 
 -------------------------- load colors palette ------------------------------
 local colors_buttons = {}
@@ -79,9 +95,9 @@ end
 end]]
 
 -------------------------- load settings ------------------------------
-local settings ={}
+local settings_table ={}
 
-local window_x_start, window_y_start, window_h_start, window_w_start, dock, zoom
+local dock, zoom, window_x_start, window_y_start, window_h_start, window_w_start, fallow_cursor_state
 
 function reset_settings()
   dock = 0
@@ -90,9 +106,20 @@ function reset_settings()
   window_y_start = 0
   window_w_start = ((color_buttons_count+1)*button_size*zoom)
   window_h_start = button_size*zoom
+  fallow_cursor_state = false
 end
 
 ----------------------------- save -----------------------------------------
+
+function get_color_buttons_count()
+
+  if colors_buttons ~= nil then
+    for key, value in pairs(colors_buttons) do
+      color_buttons_count = key
+    end
+  end
+  return color_buttons_count
+end
 
 function load_preference()
   
@@ -105,24 +132,34 @@ function load_preference()
     reset_colors()
   end
   
-  if colors_buttons ~= nil then
-    for key, value in pairs(colors_buttons) do
-      color_buttons_count = key
-    end
-  end
+get_color_buttons_count()
   
   --
   
   if is_settings_ini then
-    settings = INI.load(ini_path .. settings_ini ..'.ini')
+    settings_table = INI.load(ini_path .. settings_ini ..'.ini')
+    local WindowHWND =  reaper.GetMainHwnd() -- get reaper widnows
+    local retval, left, top, right, bottom = reaper.JS_Window_GetClientRect(WindowHWND) --get reaper widnows size
+    local a, b = asm.getMouseXY()
     
-    if settings.settings ~= nil then
-      dock = settings.settings.dock
-      zoom = settings.settings.zoom
-      window_x_start = settings.settings.window_x_start
-      window_y_start = settings.settings.window_y_start
-      window_w_start = settings.settings.window_w_start
-      window_h_start = settings.settings.window_h_start
+    if settings_table.settings ~= nil then
+      dock = settings_table.settings.dock
+      zoom = settings_table.settings.zoom
+      window_w_start = settings_table.settings.window_w_start
+      window_h_start = settings_table.settings.window_h_start
+      fallow_cursor_state = settings_table.settings.fallow_cursor_state
+      if not fallow_cursor_state then
+        window_x_start = settings_table.settings.window_x_start
+        window_y_start = settings_table.settings.window_y_start
+      else
+        local x, y = reaper.GetMousePosition()
+        window_x_start = x - window_w_start/2
+        window_y_start = y - button_size*zoom-50
+        if window_x_start <= left then window_x_start = left end
+        if window_x_start >= right-(window_y_start/2) then window_x_start = right - window_w_start-20 end
+        if window_y_start <= top then window_y_start = top end
+        if window_y_start >= bottom then window_y_start = bottom - window_y_start - button_size*zoom-50 end
+      end
     else
       reset_settings()
     end
@@ -161,21 +198,20 @@ load_preference()
 
 function save_preference()
 
-  local dock, window_x_get_in_closed, window_y_get_in_closed, window_w_get_in_closed, window_h_get_in_closed = gfx.dock(-1, 0, 0, 0, 0)
+  dock, window_x_get_in_closed, window_y_get_in_closed, window_w_get_in_closed, window_h_get_in_closed = gfx.dock(-1, 0, 0, 0, 0)
   
-  settings = {
-    ['settings'] = {
+  settings_table.settings = {
       ['dock'] = dock,
       ['zoom'] = zoom,
       ['window_x_start'] = window_x_get_in_closed,
       ['window_y_start'] = window_y_get_in_closed,
       ['window_w_start'] = window_w_get_in_closed,
-      ['window_h_start'] = window_h_get_in_closed
-    }
+      ['window_h_start'] = window_h_get_in_closed,
+      ['fallow_cursor_state'] = fallow_cursor_state
   }
 
  
-  INI.save((ini_path .. settings_ini ..'.ini'), settings)
+  INI.save((ini_path .. settings_ini ..'.ini'), settings_table)
 
   INI.save((ini_path .. color_palette_ini ..'.ini'), colors_buttons)
  --[[ Msg('saved')
@@ -204,6 +240,208 @@ function save_preference()
 end
 
 ----------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+local menu_text = ''
+local menu_init = {
+  it_1_1   = 'Follow cursor position',
+  it_2_2   = '||Reset color palette',
+  it_3_3   = 'Reset settings',
+  it_4_4   = '||Show settings files location',
+  it_5_5   = '||Help',
+  it_6_6   = '||Close'
+}
+
+local menu = asm_table.copy(menu_init)
+
+function menu_setF()
+  menu_text =      menu.it_1_1..    '|'..menu.it_2_2..    '|'..menu.it_3_3..    '|'..menu.it_4_4..    '|'..menu.it_5_5..  '|'..menu.it_6_6
+  return menu_text
+end
+local menu_02_state = 1
+
+
+
+function help_menuF()
+  reaper.ShowMessageBox(help_msg, 'HELP: '..script_title, 0)
+end
+
+function open_settings_file_menuF()
+  reaper.CF_ShellExecute(ini_path)
+end
+
+
+function delete_color_palette_file_menuF()
+  --remove_settings()
+  save_preference()
+  reset_colors()
+  --button_size = window_w_start/color_buttons_count-1
+  --Msg(window_w_frame)
+  --Msg(window_h_frame)
+  
+    --button_size = window_w_start/color_buttons_count-1/zoom
+    --button_size = 20
+   -- Msg(button_size*zoom)
+  --reset_settings()
+  
+  
+  
+  color_buttons_count = get_color_buttons_count()
+  
+  --os.remove(ini_path .. color_palette_ini ..'.ini')
+  --reset_settings()
+  --window_w_start = window_w_frame --((color_buttons_count+1)*button_size*zoom)
+  --window_h_start = window_h_frame --button_size*zoom
+  window_x_start = window_x_frame --button_size*zoom
+  window_y_start = window_y_frame --button_size*zoom
+  
+  --window_w_start = ((color_buttons_count+1)*button_size)*zoom
+  --window_h_start = button_size*zoom
+  
+  
+  if window_w_frame > window_h_frame then
+    window_w_start = ((color_buttons_count+1)*button_size)*zoom
+    window_h_start = button_size*zoom
+  
+    --end
+  else
+    window_w_start = button_size*zoom
+    window_h_start = ((color_buttons_count+1)*button_size)*zoom
+  end
+  
+  gfx.quit()
+  
+
+  --init_data()
+  --gfx.init("ASM Record play stop pause state", window_w, window_h, docker_start)
+  gfx.init(script_win_title, window_w_start, window_h_start, dock, window_x_start, window_y_start)
+  --save_settings()
+end
+
+
+function delete_settings_file_menuF()
+  --remove_settings()
+  reset_settings()
+  
+  gfx.quit()
+  --init_data()
+  --gfx.init("ASM Record play stop pause state", window_w, window_h, docker_start)
+  gfx.init(script_win_title, window_w_start, window_h_start, dock, window_x_start, window_y_start)
+  --save_settings()
+end
+
+function update_settings_and_color_palette()
+
+    color_buttons_count = get_color_buttons_count()
+  -- window_w_start = window_w_frame --((color_buttons_count+1)*button_size*zoom)
+  -- window_h_start = window_h_frame --button_size*zoom
+  window_x_start = window_x_frame --button_size*zoom
+  window_y_start = window_y_frame --button_size*zoom
+   
+   --window_w_start = ((color_buttons_count+1)*button_size)*zoom
+   --window_h_start = button_size*zoom
+   
+   
+   
+   
+   if window_w_frame > window_h_frame then
+     window_w_start = ((color_buttons_count+1)*button_size)*zoom
+     window_h_start = button_size*zoom
+
+     --end
+   else
+     window_w_start = button_size*zoom
+     window_h_start = ((color_buttons_count+1)*button_size)*zoom
+   end
+   
+   
+   
+   
+   
+
+   
+   
+   gfx.quit()
+  
+   --init_data()
+   --gfx.init("ASM Record play stop pause state", window_w, window_h, docker_start)
+   gfx.init(script_win_title, window_w_start, window_h_start, dock, window_x_start, window_y_start)
+end
+
+function RMB_menu()
+  RMB = (gfx.mouse_cap & 2) ~= 0
+    if RMB then
+        asm.setXY(gfx.mouse_x, gfx.mouse_y)
+        menu_text = menu_setF()
+        menu_set = gfx.showmenu(menu_text)
+        
+        if menu_set == 1 then
+          --delete_color_palette_file_menuF()
+          if fallow_cursor_state then
+            fallow_cursor_state = false
+          else
+            fallow_cursor_state = true
+          end
+        elseif menu_set == 2 then
+         --[[ if menu_01_state == 1 and menu_02_state == 1 then
+            menu.it_1_1 = '!'..menu_init.it_1_1
+            menu.it_2_2 = menu_init.it_2_2
+            repeat_indicate_state = 0
+            menu_02_state = 0
+          elseif menu_01_state == 0 and menu_02_state == 1 then
+            menu.it_1_1 = menu_init.it_1_1
+            menu.it_2_2 = menu_init.it_2_2
+            repeat_indicate_state = 0
+            menu_02_state = 0
+          elseif menu_01_state == 1 and menu_02_state == 0 then
+            menu.it_1_1 = '!'..menu_init.it_1_1
+            menu.it_2_2 = '!'..menu_init.it_2_2
+            repeat_indicate_state = 1
+            menu_02_state = 1
+          elseif menu_01_state == 0 and menu_02_state == 0 then
+            menu.it_1_1 = menu_init.it_1_1
+            menu.it_2_2 = '!'..menu_init.it_2_2
+            repeat_indicate_state = 1
+            menu_02_state = 1
+          end]]--
+          
+          delete_color_palette_file_menuF()
+        elseif menu_set == 3 then
+          delete_settings_file_menuF()
+        elseif menu_set == 4 then
+          open_settings_file_menuF() -- open settings file location
+        elseif menu_set == 5 then
+          help_menuF() --show help
+        elseif menu_set == 6 then
+          return save_preference(), gfx.quit(), reaper.atexit(MAIN)
+        end
+    end
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -253,7 +491,19 @@ end]]
 ------------------------------------------------------------------
 function Button:LMB() 
   if mouse_on_button then
-    if LMB and Alt then -- LMB+Alt
+  
+  if LMB and Ctrl then -- LMB+Ctrl
+    reaper.Undo_BeginBlock()
+      if func_03_LMB_ctrl or func_04_LMB_ctrl then
+        if state_boolean and button_up then
+          func_03_LMB_ctrl(r_original_btn_color, g_original_btn_color, b_original_btn_color)
+        elseif button_up then
+          func_04_LMB_ctrl(r_original_btn_color, g_original_btn_color, b_original_btn_color)
+        end
+      end
+      button_up = false
+    elseif LMB and Shift then
+    elseif LMB and Alt then -- LMB+Alt
       reaper.Undo_BeginBlock()
         if func_07_LMB_alt or func_08_LMB_alt then
           if state_boolean and button_up then
@@ -263,8 +513,8 @@ function Button:LMB()
           end
         end
      button_up = false
+     
      elseif LMB  then --LMB
-    
       reaper.Undo_BeginBlock()
         if func_01_LMB or func_02_LMB then
           if state_boolean and button_up then
@@ -282,8 +532,11 @@ function Button:LMB()
 end
 ------------------------------------------------------------------
 function Button:RMB()
-  if mouse_on_button then
-    if RMB  then --RMB
+  --[[if mouse_on_button then
+    if RMB and Ctrl then
+    elseif RMB and Shift then
+    elseif RMB and Alt then
+    elseif RMB  then --RMB
       reaper.Undo_BeginBlock()
         if func_01_RMB or func_01_RMB then
           if state_boolean and button_up then
@@ -297,12 +550,26 @@ function Button:RMB()
         button_up = false
     end
   end
-  reaper.Undo_EndBlock(script_title, -1)
+  reaper.Undo_EndBlock(script_title, -1)]]--
 end
 ------------------------------------------------------------------
 function Button:MMB()
   if mouse_on_button then
-    if MMB then
+    if MMB and Ctrl then
+      reaper.Undo_BeginBlock()
+      if func_03_MMB_ctrl or func_04_MMB_ctrl then
+              if state_boolean and button_up then
+                --func_01_LMB(param_01)
+                func_03_MMB_ctrl(param_01)
+              elseif button_up then
+                --func_02_LMB(param_01)
+                func_04_MMB_ctrl(param_01)
+              end
+      end
+      button_up = false
+    elseif MMB and Shift then
+    elseif MMB and Alt then
+    elseif MMB then
       reaper.Undo_BeginBlock()
       if func_01_MMB or func_02_MMB then
               if state_boolean and button_up then
@@ -368,12 +635,15 @@ function draw_or_update_buttons()
                                       100, 100, 100, 255,
                                       _text,'Calibri', 24, 'b',
                                       255, 255, 255, 255,
-                                      func_01_LMB_color_for_sel, func_01_LMB_color_for_sel, _04, _05, _05, _06,
+                                      func_01_LMB_color_for_sel, func_01_LMB_color_for_sel,
+                                      func_01_LMB_Ctrl_color_for_sel_TAKES, func_01_LMB_Ctrl_color_for_sel_TAKES, _05, _06,
                                       func_01_LMB_ALT_remove_button, func_01_LMB_ALT_remove_button, _09, _10, _11, _12, _13, _14, _15, _16,
                                       
-                                      func_01_RMB_color_for_sel_ITEMS, func_01_RMB_color_for_sel_ITEMS, _19, _20, _21, _22, _23, _24, _25, _26, _27, _28, _29, _30, _31, _32,
+                                      func_01_RMB_color_for_sel_ITEMS, func_01_RMB_color_for_sel_ITEMS,
+                                      _19, _20, _21, _22, _23, _24, _25, _26, _27, _28, _29, _30, _31, _32,
                                       
-                                      func_01_MMB_change_button_color, func_01_MMB_change_button_color, _35, _36, _37, _38, _39, _40, _41, _42, _43, _44, _45, _46, _47, _48)
+                                      func_01_MMB_change_button_color, func_01_MMB_change_button_color,
+                                      func_01_MMB_Ctrl_change_button_color, func_01_MMB_Ctrl_change_button_color, _37, _38, _39, _40, _41, _42, _43, _44, _45, _46, _47, _48)
   
         
        
@@ -466,7 +736,6 @@ end
   
   
   function func_01_MMB_change_button_color(btn_numb) --MMB
-    save_preference()
     apply, new_button_color = reaper.GR_SelectColor()
         --Msg (new_track_color)
     if apply == 1 then
@@ -477,34 +746,121 @@ end
       colors_buttons_one_color["b"] = b
       colors_buttons[btn_numb] = colors_buttons_one_color
       end
+      save_preference()
+  end
+  
+  function func_01_MMB_Ctrl_change_button_color(btn_numb) --MMB+Ctrl
+  
+    if cursor_focus == "tracks" then
+      local count_track_all =  reaper.CountTracks(0)
+      if count_track_all > 0 then  
+        local track =  reaper.GetSelectedTrack(0, 0)
+        local track_color = reaper.GetMediaTrackInfo_Value(track, "I_CUSTOMCOLOR")
+        if track_color ~= 0 then
+          r, g, b = reaper.ColorFromNative(track_color|0x1000000)
+        else
+          r, g, b = 127, 127, 127
+        end
+      end
+    elseif cursor_focus == "items" or cursor_focus == "takes" then
+      local count_selected_items = reaper.CountSelectedMediaItems(0)
+      if count_selected_items > 0 then   
+        local item =  reaper.GetSelectedMediaItem( 0, 0 )
+        local item_color = reaper.GetDisplayedMediaItemColor(item)
+        if item_color ~= 0 then
+          r, g, b = reaper.ColorFromNative(item_color|0x1000000)
+        else
+          r, g, b = 127, 127, 127
+        end
+      end
+    end
+    local colors_buttons_one_color = {}
+    colors_buttons_one_color["r"] = r
+    colors_buttons_one_color["g"] = g
+    colors_buttons_one_color["b"] = b
+    colors_buttons[btn_numb] = colors_buttons_one_color
+  
+  
+    save_preference()
   end
   
   
   
+  
   function func_01_LMB_color_for_sel(r, g, b) --LMB
+  
+  if cursor_focus == "tracks" then
+    reaper.SetCursorContext(0)
+    local new_track_color = reaper.ColorToNative(r, g, b)
     
-    new_track_color = reaper.ColorToNative(r, g, b)
-
-      count_track_all =  reaper.CountTracks(0)
-      for i = 0, count_track_all - 1 do
-
-        track = reaper.GetTrack(0, i)
-        track_isSel = reaper.IsTrackSelected(track)
-
-        if track_isSel then
-          reaper.SetTrackColor(track, new_track_color)
+      local count_track_all =  reaper.CountTracks(0)
+      if count_track_all > 0 then  
+        for i = 0, count_track_all - 1 do
+      
+          local track = reaper.GetTrack(0, i)
+          local track_isSel = reaper.IsTrackSelected(track)
+      
+          if track_isSel then
+            reaper.SetTrackColor(track, new_track_color)
+          end
         end
       end
+  else
+    reaper.SetCursorContext(1)
+    local new_item_color = reaper.ColorToNative(r, g, b)
+    
+  
+    local count_selected_items = reaper.CountSelectedMediaItems(0)
+--    if Count_Selected_Items == 0 then no_undo() return end
+    if count_selected_items > 0 then    
+      for i = 0 , count_selected_items-1 do
+          local selected_item = reaper.GetSelectedMediaItem(0, i)
+          --color = reaper.GetMediaItemInfo_Value(selected_item,"I_CUSTOMCOLOR")
+          reaper.SetMediaItemInfo_Value(selected_item,"I_CUSTOMCOLOR", new_item_color|0x1000000)
+          reaper.UpdateItemInProject(selected_item)
+      end
+    end
+  end
+    
 
   end  
   
   
   
-  
-  function func_01_RMB_color_for_sel_ITEMS(r, g, b) --LMB
-  
+  function func_01_LMB_Ctrl_color_for_sel_TAKES(r, g, b) --LMB
+    reaper.Undo_BeginBlock()  
+    reaper.SetCursorContext(1)
     
     local new_item_color = reaper.ColorToNative(r, g, b)
+    
+  
+    local count_selected_items = reaper.CountSelectedMediaItems(0)
+--    if Count_Selected_Items == 0 then no_undo() return end
+    if count_selected_items > 0 then  
+      for i = 0 , count_selected_items-1 do
+      
+        local selected_item = reaper.GetSelectedMediaItem(0, i)
+        local selected_take = reaper.GetActiveTake(selected_item);
+        --color = reaper.GetMediaItemInfo_Value(selected_item,"I_CUSTOMCOLOR")
+        if selected_take ~= nil then
+          reaper.SetMediaItemTakeInfo_Value(selected_take,"I_CUSTOMCOLOR", new_item_color|0x1000000)
+        else
+          reaper.SetMediaItemInfo_Value(selected_item,"I_CUSTOMCOLOR", new_item_color|0x1000000)
+        end
+        reaper.UpdateItemInProject(selected_item)
+      end
+    end
+    
+  
+    reaper.Undo_EndBlock("Color active take of selected item(s)", -1)
+    
+  end
+  
+  function func_01_RMB_color_for_sel_ITEMS(r, g, b) --RMB
+  
+  
+
+  --[[  local new_item_color = reaper.ColorToNative(r, g, b)
     
   
     local count_selected_items = reaper.CountSelectedMediaItems(0)
@@ -512,24 +868,25 @@ end
       
     for i = 0 , count_selected_items-1 do
         local selected_item = reaper.GetSelectedMediaItem(0, i)
-        color = reaper.GetMediaItemInfo_Value(selected_item,"I_CUSTOMCOLOR")
+        --color = reaper.GetMediaItemInfo_Value(selected_item,"I_CUSTOMCOLOR")
         reaper.SetMediaItemInfo_Value(selected_item,"I_CUSTOMCOLOR", new_item_color|0x1000000)
         reaper.UpdateItemInProject(selected_item)
     end
-     
+     ]]
 
   end
   
   
   
   function func_01_LMB_add_color() --LMB
-    save_preference()
-    local color_buttons_count = 0
-    if colors_buttons ~= nil then
+    --local color_buttons_count = 0
+    --[[if colors_buttons ~= nil then
       for key, value in pairs(colors_buttons) do
         color_buttons_count = key
       end
-    end
+    end]]--
+    
+    --color_buttons_count = get_color_buttons_count()
 
     apply, add_button_color = reaper.GR_SelectColor()
   
@@ -540,12 +897,14 @@ end
       colors_buttons_one_color["g"] = g
       colors_buttons_one_color["b"] = b
       colors_buttons[color_buttons_count+1] = colors_buttons_one_color
+      color_buttons_count = get_color_buttons_count()
     end
-  
+  save_preference()
+  update_settings_and_color_palette()
   end
   
   function func_01_LMB_ALT_remove_button(pos)
-    save_preference()
+  
     colors_buttons_temp = {}
     i = 1
     if colors_buttons ~= nil then
@@ -558,6 +917,10 @@ end
     end
     colors_buttons = colors_buttons_temp
     --table.remove(colors_buttons[pos-1])
+    get_color_buttons_count()
+    save_preference()
+    
+    update_settings_and_color_palette()
   end
   
   
@@ -625,7 +988,19 @@ function MAIN()
     return gfx.quit(), reaper.atexit(MAIN)
   end
 
+  context_focus = reaper.GetCursorContext2(true)
+  if context_focus == 0 then
+    cursor_focus = "tracks"
+  else
+    cursor_focus = "items"
+  end  
 
+
+  if fallow_cursor_state then
+    menu.it_1_1 = '!'..menu_init.it_1_1
+  else
+    menu.it_1_1 = menu_init.it_1_1
+  end
  
   --[[if char == 27 then
     save_preference()
@@ -646,6 +1021,7 @@ function MAIN()
 
   --window_w = window_w_start*zoom
   --window_h = window_h_start*zoom
+  get_color_buttons_count()
   _boolean, window_HWND, window_w_frame, window_h_frame, window_x_frame, window_y_frame = asm.getWindowState(script_win_title)
       --window_width = 100
       --window_height = 100
@@ -736,7 +1112,7 @@ function MAIN()
     
     
     
-    
+    RMB_menu()
     
     reaper.defer(MAIN)
     --[[if gfx.getchar() >= 0 then reaper.defer(MAIN)

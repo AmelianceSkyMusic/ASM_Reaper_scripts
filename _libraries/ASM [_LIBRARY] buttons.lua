@@ -4,7 +4,7 @@
  * Author URI: https://forum.cockos.com/member.php?u=123975
  * Licence: GPL v3
  * REAPER: 5.0
- * Version: 1.0.1
+ * Version: 1.0.2
 --]]
 
 --[[
@@ -12,7 +12,9 @@
  * v1.0.0 (2020-04-01)
   + Initial release
 * v1.0.1 (2020-04-02)
-  + Initial release
+  + Update
+* v1.0.2 (2020-04-03)
+  + Update
 --]]
 
 
@@ -130,15 +132,15 @@ function Button:create()
   func_09_LMB_ctrl_shift, func_10_LMB_ctrl_shift, func_11_LMB_ctrl_alt, func_12_LMB_ctrl_alt = self.func_09, self.func_10, self.func_11, self.func_12
   func_13_LMB_shift_alt, func_14_LMB_shift_alt, func_15_LMB_ctrl_shift_alt, func_16_LMB_ctrl_shift_alt = self.func_13, self.func_14, self.func_15, self.func_16
   
-  func_01_RMB, func_02_RMB, func_19_RMB_ctrl, func_20_RMB_ctrl = self.func_17, self.func_18, self.func_19, self.func_20
-  func_21_RMB_shift, func_22_RMB_shift, func_23_RMB_alt, func_24_RMB_alt = self.func_21, self.func_22, self.func_23, self.func_24
-  func_25_RMB_ctrl_shift, func_26_RMB_ctrl_shift, func_27_RMB_ctrl_alt, func_28_RMB_ctrl_alt = self.func_25, self.func_26, self.func_27, self.func_28
-  func_29_RMB_shift_alt, func_30_RMB_shift_alt, func_31_RMB_ctrl_shift_alt, func_32_RMB_ctrl_shift_alt = self.func_29, self.func_30, self.func_31, self.func_32
+  func_01_RMB, func_02_RMB, func_03_RMB_ctrl, func_04_RMB_ctrl = self.func_17, self.func_18, self.func_19, self.func_20
+  func_05_RMB_shift, func_06_RMB_shift, func_07_RMB_alt, func_08_RMB_alt = self.func_21, self.func_22, self.func_23, self.func_24
+  func_09_RMB_ctrl_shift, func_10_RMB_ctrl_shift, func_11_RMB_ctrl_alt, func_12_RMB_ctrl_alt = self.func_25, self.func_26, self.func_27, self.func_28
+  func_13_RMB_shift_alt, func_14_RMB_shift_alt, func_15_RMB_ctrl_shift_alt, func_16_RMB_ctrl_shift_alt = self.func_29, self.func_30, self.func_31, self.func_32
     
-  func_01_MMB, func_02_MMB, func_35_MMB_ctrl, func_36_MMB_ctrl = self.func_33, self.func_34, self.func_35, self.func_36
-  func_37_MMB_shift, func_38_MMB_shift, func_39_MMB_alt, func_40_MMB_alt = self.func_37, self.func_38, self.func_39, self.func_40
-  func_41_MMB_ctrl_shift, func_42_MMB_ctrl_shift, func_43_MMB_ctrl_alt, func_44_MMB_ctrl_alt = self.func_41, self.func_42, self.func_43, self.func_44
-  func_45_MMB_shift_alt, func_46_MMB_shift_alt, func_47_MMB_ctrl_shift_alt, func_48_MMB_ctrl_shift_alt = self.func_45, self.func_46, self.func_47, self.func_48
+  func_01_MMB, func_02_MMB, func_03_MMB_ctrl, func_04_MMB_ctrl = self.func_33, self.func_34, self.func_35, self.func_36
+  func_05_MMB_shift, func_06_MMB_shift, func_07_MMB_alt, func_08_MMB_alt = self.func_37, self.func_38, self.func_39, self.func_40
+  func_09_MMB_ctrl_shift, func_10_MMB_ctrl_shift, func_11_MMB_ctrl_alt, func_12_MMB_ctrl_alt = self.func_41, self.func_42, self.func_43, self.func_44
+  func_13_MMB_shift_alt, func_14_MMB_shift_alt, func_15_MMB_ctrl_shift_alt, func_16_MMB_ctrl_shift_alt = self.func_45, self.func_46, self.func_47, self.func_48
   
   x, y, w, h = x*zoom_index, y*zoom_index, w*zoom_index, h*zoom_index -- zooming some varibles
   if font_size_1 ~= nil then font_size_1 = font_size_1*zoom_index end
