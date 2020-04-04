@@ -4,7 +4,7 @@
  * Author URI: https://forum.cockos.com/member.php?u=123975
  * Licence: GPL v3
  * REAPER: 5.0
- * Version: 1.0.5
+ * Version: 1.0.6
 --]]
 
 --[[
@@ -21,6 +21,8 @@
   + Add new functions for work with window state
  * v1.0.5 (2020-04-02)
   + Update
+ * v1.0.6 (2020-04-04)
+  + Some fixes
 --]]
 
 asm = {
@@ -56,6 +58,8 @@ asm = {
     commandID = reaper.NamedCommandLookup(cID_input)
     reaper.Main_OnCommand(commandID, 0)
     elseif type == 'MIDI' then
+    commandID = reaper.NamedCommandLookup("40153") --View: Toggle show MIDI editor windows
+    reaper.Main_OnCommand(commandID, 0)
     activeMidiEditor = reaper.MIDIEditor_GetActive()
     commandID = reaper.NamedCommandLookup(cID_input)
     reaper.MIDIEditor_OnCommand(activeMidiEditor, commandID)

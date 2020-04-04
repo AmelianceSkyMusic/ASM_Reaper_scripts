@@ -5,7 +5,7 @@
  * Author URI: https://forum.cockos.com/member.php?u=123975
  * Licence: GPL v3
  * REAPER: 5.0
- * Version: 1.0.0
+ * Version: 1.0.1
  * Description: Use in mouse modifiers. You can change actions in USER DATA part
 --]]
 
@@ -13,6 +13,8 @@
  * Changelog:
  * v1.0.0 (2019-04-24)
   + Initial release
+ * v1.0.1 (2020-04-04)
+  + Some fixes
 --]]
 ----------------------------------------------------------------------
 ----------------------------USER DATA---------------------------------
@@ -20,6 +22,8 @@
 
 -- Script: sr_Open MIDI editor and zoom to content.lua:
 local midi_action = '_RS84074b5fb92a906b135f993286a2bfb5f7bc86bd'
+-- Change section type from 'MAIN' to 'MIDI' if you get command ID from MIDI Editor selection
+local midi_action_section = 'MAIN'
 
 -- Item properties: Toggle show media item/take properties:
 local audio_action = '41589'
@@ -49,6 +53,7 @@ dofile(script_path .. "../_libraries/".."/ASM [_LIBRARY] ".."other"..".lua")
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
 
+
 function MAIN()
   local item_data = reaper.BR_ItemAtMouseCursor()
   
@@ -58,13 +63,13 @@ function MAIN()
     item_type = asm.getItemType(item_data)
     
     if item_type == 'MIDI' then
-      asm.doCmdID(midi_action ,'MAIN') 
+      asm.doCmdID(midi_action, midi_action_section)
     ----------------------------------------------------------------------  
     elseif item_type == 'AUDIO' then
-      asm.doCmdID(audio_action ,'MAIN')
+      asm.doCmdID(audio_action, 'MAIN')
     ----------------------------------------------------------------------
     elseif item_type == 'SUBPROJECT' then
-      asm.doCmdID(subproject_action ,'MAIN')
+      asm.doCmdID(subproject_action, 'MAIN')
     ----------------------------------------------------------------------  
     end
   end
