@@ -5,7 +5,7 @@
  * Author URI: https://forum.cockos.com/member.php?u=123975
  * Licence: GPL v3
  * REAPER: 5.0
- * Version: 1.0.5
+ * Version: 1.0.6
  * Description: Colorize track items and items
 --]]
 
@@ -21,12 +21,15 @@
   + Update
 * v1.0.4 (2020-04-02)
   + Add more functions
-* v1.0.5 (2020-04-02)
+* v1.0.5 (2020-04-03)
+  + Add more functions
+* v1.0.6 (2020-04-04)
   + Add more functions
 --]]
 
 local script_title='ASM [GUI COLOR] ASM Color panel'
 local script_win_title = 'ASM Color Panel'
+local script_ver = ' v1.0.6'
 
 local proj = 0
 
@@ -40,6 +43,9 @@ local help_msg =
 'MMB+Ctrl\t— Take color from track / item'..'\n'..
 '\n'..
 'LMB+Alt\t\t— Remove palette color'..'\n'..
+'\n'..
+'LMB+Shift\t— Inverse «close after coloring» state for track / item'..'\n'..
+'LMB+Ctrl+Shift\t— Inverse «close after coloring» state  for take'..'\n'..
 '\n'..
 'AmelianceSkyMusic@gmail.com 2020'
 
@@ -282,7 +288,7 @@ local menu_02_state = 1
 
 
 function help_menuF()
-  reaper.ShowMessageBox(help_msg, 'HELP: '..script_title, 0)
+  reaper.ShowMessageBox(help_msg, 'HELP: '..script_win_title..script_ver, 0)
 end
 
 function open_settings_file_menuF()
@@ -505,8 +511,22 @@ end]]
 ------------------------------------------------------------------
 function Button:LMB() 
   if mouse_on_button then
-  
-  if LMB and Ctrl then -- LMB+Ctrl
+  if LMB and Ctrl and Shift then -- LMB+Ctrl+Shift
+    reaper.Undo_BeginBlock()
+    if func_09_LMB_ctrl_shift or func_10_LMB_ctrl_shift then
+      if state_boolean and button_up then
+        func_09_LMB_ctrl_shift(r_original_btn_color, g_original_btn_color, b_original_btn_color)
+      elseif button_up then
+        func_10_LMB_ctrl_shift(r_original_btn_color, g_original_btn_color, b_original_btn_color)
+      end
+    end
+    if not close_after_coloring_state then
+      save_preference()
+      gfx.quit()
+      reaper.atexit(MAIN)
+    end
+    button_up = false
+  elseif LMB and Ctrl then -- LMB+Ctrl
     reaper.Undo_BeginBlock()
       if func_03_LMB_ctrl or func_04_LMB_ctrl then
         if state_boolean and button_up then
@@ -521,7 +541,21 @@ function Button:LMB()
         reaper.atexit(MAIN)
       end
       button_up = false
-    elseif LMB and Shift then
+    elseif LMB and Shift then -- LMB+Shift
+      reaper.Undo_BeginBlock()  
+      if func_05_LMB_shift or func_06_LMB_shift then
+        if state_boolean and button_up then
+          func_05_LMB_shift(r_original_btn_color, g_original_btn_color, b_original_btn_color)
+        elseif button_up then
+          func_06_LMB_shift(r_original_btn_color, g_original_btn_color, b_original_btn_color)
+        end
+      end
+      if not close_after_coloring_state then
+        save_preference()
+        gfx.quit()
+        reaper.atexit(MAIN)
+      end
+      button_up = false
     elseif LMB and Alt then -- LMB+Alt
       reaper.Undo_BeginBlock()
         if func_07_LMB_alt or func_08_LMB_alt then
@@ -660,8 +694,10 @@ function draw_or_update_buttons()
                                       _text,'Calibri', 24, 'b',
                                       255, 255, 255, 255,
                                       func_01_LMB_color_for_sel, func_01_LMB_color_for_sel,
-                                      func_01_LMB_Ctrl_color_for_sel_TAKES, func_01_LMB_Ctrl_color_for_sel_TAKES, _05, _06,
-                                      func_01_LMB_ALT_remove_button, func_01_LMB_ALT_remove_button, _09, _10, _11, _12, _13, _14, _15, _16,
+                                      func_01_LMB_Ctrl_color_for_sel_TAKES, func_01_LMB_Ctrl_color_for_sel_TAKES,
+                                      func_01_LMB_color_for_sel, func_01_LMB_color_for_sel,
+                                      func_01_LMB_ALT_remove_button, func_01_LMB_ALT_remove_button,
+                                      func_01_LMB_Ctrl_color_for_sel_TAKES, func_01_LMB_Ctrl_color_for_sel_TAKES, _11, _12, _13, _14, _15, _16,
                                       
                                       func_01_RMB_color_for_sel_ITEMS, func_01_RMB_color_for_sel_ITEMS,
                                       _19, _20, _21, _22, _23, _24, _25, _26, _27, _28, _29, _30, _31, _32,
