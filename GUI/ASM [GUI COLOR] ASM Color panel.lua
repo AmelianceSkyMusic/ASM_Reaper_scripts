@@ -27,7 +27,7 @@
     + Add more functions
   * v1.0.7 (2020-04-20)
     + Save/load palette functions
-    + Some fiwxes
+    + Some fixes
 --]]
 
 local script_title='ASM [GUI COLOR] ASM Color panel'
@@ -276,9 +276,9 @@ function load_custom_palette_F()
           window_w_start = button_size*zoom
           window_h_start = ((color_buttons_count+1)*button_size)*zoom
         end
+        save_preference()
         gfx.quit()
         gfx.init(script_win_title, window_w_start, window_h_start, dock, window_x_start, window_y_start)
-        save_preference()
       else
         local get_retval = reaper.ShowMessageBox('Wrong palette file!', 'ERROR!', 5)
         if get_retval ==4 then
