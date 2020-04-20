@@ -175,9 +175,9 @@ get_color_buttons_count()
         window_x_start = x - window_w_start/2
         window_y_start = y - button_size*zoom-50
         if window_x_start <= left then window_x_start = left end
-        if window_x_start >= right-(window_x_start*2) then window_x_start = right - window_w_start-20 end
+        if window_x_start+window_w_start >= right then window_x_start = right - window_w_start-20 end
         if window_y_start <= top then window_y_start = top end
-        if window_y_start >= bottom then window_y_start = bottom - window_y_start - button_size*zoom-50 end
+        if window_y_start+window_h_start >= bottom then window_y_start = bottom - window_h_start - 50 end
       end
     else
       reset_settings()
