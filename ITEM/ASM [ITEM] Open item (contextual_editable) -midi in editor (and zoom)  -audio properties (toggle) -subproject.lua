@@ -5,7 +5,7 @@
  * Author URI: https://forum.cockos.com/member.php?u=123975
  * Licence: GPL v3
  * REAPER: 5.0
- * Version: 1.0.1
+ * Version: 1.0.2
  * Description: Use in mouse modifiers. You can change actions in USER DATA part
 --]]
 
@@ -15,6 +15,8 @@
   + Initial release
  * v1.0.1 (2020-04-04)
   + Some fixes
+ * v1.0.2 (2020-04-20)
+  + Some fixes
 --]]
 ----------------------------------------------------------------------
 ----------------------------USER DATA---------------------------------
@@ -23,7 +25,7 @@
 -- Script: sr_Open MIDI editor and zoom to content.lua:
 local midi_action = '_RS84074b5fb92a906b135f993286a2bfb5f7bc86bd'
 -- Change section type from 'MAIN' to 'MIDI' if you get command ID from MIDI Editor selection
-local midi_action_section = 'MAIN'
+local midi_action_section = 'MIDI'
 
 -- Item properties: Toggle show media item/take properties:
 local audio_action = '41589'
