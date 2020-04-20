@@ -5,31 +5,34 @@
  * Author URI: https://forum.cockos.com/member.php?u=123975
  * Licence: GPL v3
  * REAPER: 5.0
- * Version: 1.0.6
+ * Version: 1.0.7
  * Description: Colorize track items and items
 --]]
 
 --[[
  * Changelog:
  * v1.0.0 (2020-04-01)
-  + Initial release
-* v1.0.1 (2020-04-02)
-  + Save dock state
-* v1.0.2 (2020-04-02)
-  + Update functionality
-* v1.0.3 (2020-04-02)
-  + Update
-* v1.0.4 (2020-04-02)
-  + Add more functions
-* v1.0.5 (2020-04-03)
-  + Add more functions
-* v1.0.6 (2020-04-04)
-  + Add more functions
+    + Initial release
+  * v1.0.1 (2020-04-02)
+    + Save dock state
+  * v1.0.2 (2020-04-02)
+    + Update functionality
+  * v1.0.3 (2020-04-02)
+    + Update
+  * v1.0.4 (2020-04-02)
+    + Add more functions
+  * v1.0.5 (2020-04-03)
+    + Add more functions
+  * v1.0.6 (2020-04-04)
+    + Add more functions
+  * v1.0.7 (2020-04-20)
+    + Save/load palette functions
+    + Some fiwxes
 --]]
 
 local script_title='ASM [GUI COLOR] ASM Color panel'
 local script_win_title = 'ASM Color Panel'
-local script_ver = ' v1.0.6'
+local script_ver = ' v1.0.7'
 
 local proj = 0
 
@@ -47,11 +50,12 @@ local help_msg =
 'LMB+Shift\t— Inverse «close after coloring» state for track / item'..'\n'..
 'LMB+Ctrl+Shift\t— Inverse «close after coloring» state  for take'..'\n'..
 '\n'..
-'AmelianceSkyMusic@gmail.com 2020'
+'2020 AmelianceSkyMusic@gmail.com'
 
 ----------------------------------------------------------------------
 local info = debug.getinfo(1,'S')
 local script_path = info.source:match([[^@?(.*[\/])[^\/]-$]])
+local separOS = string.match(reaper.GetOS(), "Win") and "\\" or "/"
 local libraries_path = (script_path .. '../_libraries/'..'/')
 local ini_path = (script_path ..'/')
 
@@ -125,16 +129,21 @@ function get_color_buttons_count()
   if colors_buttons ~= nil then
     for key, value in pairs(colors_buttons) do
       color_buttons_count = key
+      
     end
+    return color_buttons_count
   end
-  return color_buttons_count
 end
 
 function load_preference()
   
   if is_color_palette_ini then
     colors_buttons = INI.load(ini_path .. color_palette_ini ..'.ini')
-    if colors_buttons[1] == nil then
+    if colors_buttons[1] == nil
+    or colors_buttons[1]['r'] <=0 and colors_buttons[1]['r'] >=255
+    or colors_buttons[1]['g'] <=0 and colors_buttons[1]['g'] >=255
+    or colors_buttons[1]['g'] <=0 and colors_buttons[1]['b'] >=255
+    then
       reset_colors()
     end
   else
@@ -166,7 +175,7 @@ get_color_buttons_count()
         window_x_start = x - window_w_start/2
         window_y_start = y - button_size*zoom-50
         if window_x_start <= left then window_x_start = left end
-        if window_x_start >= right-(window_y_start/2) then window_x_start = right - window_w_start-20 end
+        if window_x_start >= right-(window_x_start*2) then window_x_start = right - window_w_start-20 end
         if window_y_start <= top then window_y_start = top end
         if window_y_start >= bottom then window_y_start = bottom - window_y_start - button_size*zoom-50 end
       end
@@ -225,29 +234,59 @@ function save_preference()
   INI.save((ini_path .. settings_ini ..'.ini'), settings_table)
 
   INI.save((ini_path .. color_palette_ini ..'.ini'), colors_buttons)
- --[[ Msg('saved')
-  Msg(dock_get_get_in_closed)
-  Msg(zoom)
-  Msg(window_x_get_in_closed)
-  Msg(window_y_get_in_closed)
-  Msg(window_w_get_in_closed)
-  Msg(window_h_get_in_closed)]]--
   
-  --[[local _boolean, window_HWND, win_width, win_height = asm.getWindowState(script_win_title)
-  reaper.SetExtState(script_win_title, "win_width", tostring(win_width), 1)
-  reaper.SetExtState(script_win_title, "win_height", tostring(win_height), 1)
+end
+----------------------------------------------------------------------
+
+function save_custom_palette_F()
+  local retval, file_name = reaper.JS_Dialog_BrowseForSaveFile( 'Save custom color palette file', ini_path, 'ASM Color panel palette', 'Select file (.ini)\0*.ini\0All files\0*.*\0\0' )
+  --local retval, file_name = reaper.GetUserInputs("Save as:", 1, "Save Custom Palette", name)          
+    if retval == 1 then
+      local new_path = file_name .. ".ini" 
+      INI.save(new_path, colors_buttons)
+    end
+end
+
+function load_custom_palette_F()
   
-  local _, x_win_position, y_win_position, _, _ = gfx.dock(-1, 0, 0, 0, 0)
-  reaper.SetExtState(script_win_title, "x_win_position", tostring(x_win_position), 1)
-  reaper.SetExtState(script_win_title, "y_win_position", tostring(y_win_position), 1)
-
-  --reaper.DeleteExtState(script_win_title, "win_width", 1)
-  --reaper.DeleteExtState(script_win_title, "win_height", 1)
-  --reaper.DeleteExtState(script_win_title, "x_win_position", 1)
-  --reaper.DeleteExtState(script_win_title, "y_win_position", 1)
-
-  local dock_state, x_pos, y_pos, _, _ = gfx.dock(-1, 0, 0, 0, 0)
-  reaper.SetExtState(script_win_title, "dock", tostring(dock_state), 1)]]
+--  local retval, file_name = reaper.GetUserFileNameForRead(ini_path.."*.ini", "Select file", ".ini")
+  local retval, file_name = reaper.JS_Dialog_BrowseForOpenFiles( 'Load color palette file', ini_path, '', 'Select file (.ini)\0*.ini\0All files\0*.*\0\0', 0 )
+  
+    if retval == 1 then
+    
+      local colors_buttons_temp = INI.load(file_name)
+      
+      if colors_buttons_temp[1] ~= nil
+      and colors_buttons_temp[1]['r'] >=0 and colors_buttons_temp[1]['r'] <=255
+      and colors_buttons_temp[1]['g'] >=0 and colors_buttons_temp[1]['g'] <=255
+      and colors_buttons_temp[1]['g'] >=0 and colors_buttons_temp[1]['b'] <=255 then      
+      
+      colors_buttons = colors_buttons_temp
+    
+    
+        color_buttons_count = get_color_buttons_count()
+    
+        window_x_start = window_x_frame --button_size*zoom
+        window_y_start = window_y_frame --button_size*zoom
+        
+        if window_w_frame > window_h_frame then
+          window_w_start = ((color_buttons_count+1)*button_size)*zoom
+          window_h_start = button_size*zoom
+        else
+          window_w_start = button_size*zoom
+          window_h_start = ((color_buttons_count+1)*button_size)*zoom
+        end
+        gfx.quit()
+        gfx.init(script_win_title, window_w_start, window_h_start, dock, window_x_start, window_y_start)
+        save_preference()
+      else
+        local get_retval = reaper.ShowMessageBox('Wrong palette file!', 'ERROR!', 5)
+        if get_retval ==4 then
+          load_custom_palette_F()
+        end
+      end
+    end
+    
 end
 
 ----------------------------------------------------------------------
@@ -269,18 +308,20 @@ local menu_text = ''
 local menu_init = {
   it_1   = 'Follow cursor position',
   it_2   = 'Close after coloring',
-  it_3   = '||Reset color palette',
-  it_4   = 'Reset settings',
-  it_5   = '||Show settings files location',
-  it_6  = '||Help',
-  it_7   = '||Close'
+  it_3   = '||Save color palette',
+  it_4   = 'Load color palette',
+  it_5   = 'Reset color palette',
+  it_6   = '||Show script location',
+  it_7   = 'Reset settings',
+  it_8  = '||Help',
+  it_9   = '||Close'
 }
 
 local menu = asm_table.copy(menu_init)
 
 function menu_setF()
   menu_text =      menu.it_1..    '|'..menu.it_2..    '|'..menu.it_3..   
-              '|'..menu.it_4..    '|'..menu.it_5..    '|'..menu.it_6.. '|'..menu.it_7
+              '|'..menu.it_4..    '|'..menu.it_5..    '|'..menu.it_6.. '|'..menu.it_7.. '|'..menu.it_8.. '|'..menu.it_9
   return menu_text
 end
 local menu_02_state = 1
@@ -415,36 +456,19 @@ function RMB_menu()
            close_after_coloring_state = true
           end
         elseif menu_set == 3 then
-         --[[ if menu_01_state == 1 and menu_02_state == 1 then
-            menu.it_1_1 = '!'..menu_init.it_1_1
-            menu.it_2_2 = menu_init.it_2_2
-            repeat_indicate_state = 0
-            menu_02_state = 0
-          elseif menu_01_state == 0 and menu_02_state == 1 then
-            menu.it_1_1 = menu_init.it_1_1
-            menu.it_2_2 = menu_init.it_2_2
-            repeat_indicate_state = 0
-            menu_02_state = 0
-          elseif menu_01_state == 1 and menu_02_state == 0 then
-            menu.it_1_1 = '!'..menu_init.it_1_1
-            menu.it_2_2 = '!'..menu_init.it_2_2
-            repeat_indicate_state = 1
-            menu_02_state = 1
-          elseif menu_01_state == 0 and menu_02_state == 0 then
-            menu.it_1_1 = menu_init.it_1_1
-            menu.it_2_2 = '!'..menu_init.it_2_2
-            repeat_indicate_state = 1
-            menu_02_state = 1
-          end]]--
           
-          delete_color_palette_file_menuF()
+          save_custom_palette_F()
         elseif menu_set == 4 then
-          delete_settings_file_menuF()
+          load_custom_palette_F()
         elseif menu_set == 5 then
-          open_settings_file_menuF() -- open settings file location
+          delete_color_palette_file_menuF()
         elseif menu_set == 6 then
-          help_menuF() --show help
+          open_settings_file_menuF() -- open settings file location
         elseif menu_set == 7 then
+          delete_settings_file_menuF()
+        elseif menu_set == 8 then
+          help_menuF() --show help
+        elseif menu_set == 9 then
           return save_preference(), gfx.quit(), reaper.atexit(MAIN)
         end
     end
@@ -520,7 +544,7 @@ function Button:LMB()
         func_10_LMB_ctrl_shift(r_original_btn_color, g_original_btn_color, b_original_btn_color)
       end
     end
-    if not close_after_coloring_state then
+    if param_02 and param_02 ~= nil then
       save_preference()
       gfx.quit()
       reaper.atexit(MAIN)
@@ -535,7 +559,7 @@ function Button:LMB()
           func_04_LMB_ctrl(r_original_btn_color, g_original_btn_color, b_original_btn_color)
         end
       end
-      if close_after_coloring_state then
+      if param_02 and param_02 ~= nil then
         save_preference()
         gfx.quit()
         reaper.atexit(MAIN)
@@ -550,7 +574,7 @@ function Button:LMB()
           func_06_LMB_shift(r_original_btn_color, g_original_btn_color, b_original_btn_color)
         end
       end
-      if not close_after_coloring_state then
+      if param_02 and param_02 ~= nil then
         save_preference()
         gfx.quit()
         reaper.atexit(MAIN)
@@ -578,7 +602,7 @@ function Button:LMB()
             func_02_LMB(r_original_btn_color, g_original_btn_color, b_original_btn_color)
           end
         end
-        if close_after_coloring_state then
+        if param_02 and param_02 ~= nil then
           save_preference()
           gfx.quit()
           reaper.atexit(MAIN)
@@ -676,7 +700,7 @@ function draw_or_update_buttons()
   
             Buttons_table[i] = Button:new_elem(Btn_pos_x, Btn_pos_y, button_size, button_size, true,
   
-                                      btn_numb, _, _, _, _,
+                                      btn_numb, close_after_coloring_state, _, _, _,
                                       
                                       _, zoom, 50, 30,
   

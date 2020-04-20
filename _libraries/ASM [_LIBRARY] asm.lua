@@ -4,7 +4,7 @@
  * Author URI: https://forum.cockos.com/member.php?u=123975
  * Licence: GPL v3
  * REAPER: 5.0
- * Version: 1.0.6
+ * Version: 1.0.7
 --]]
 
 --[[
@@ -22,6 +22,8 @@
  * v1.0.5 (2020-04-02)
   + Update
  * v1.0.6 (2020-04-04)
+  + Some fixes
+ * v1.0.7 (2020-04-16)
   + Some fixes
 --]]
 
@@ -54,16 +56,23 @@ asm = {
   end,
   
   doCmdID = function(cID_input, type) --commandID, type: 'MAIN' - Main , 'MIDI' - MIDI )
-    if type == 'MAIN' then
-    commandID = reaper.NamedCommandLookup(cID_input)
-    reaper.Main_OnCommand(commandID, 0)
-    elseif type == 'MIDI' then
-    commandID = reaper.NamedCommandLookup("40153") --View: Toggle show MIDI editor windows
-    reaper.Main_OnCommand(commandID, 0)
-    activeMidiEditor = reaper.MIDIEditor_GetActive()
-    commandID = reaper.NamedCommandLookup(cID_input)
-    reaper.MIDIEditor_OnCommand(activeMidiEditor, commandID)
-	end
+    if cID_input ~= nil and type ~= nil and (type == 'MAIN' or type == 'MIDI') then
+      if type == 'MAIN' then
+        local commandID = reaper.NamedCommandLookup(cID_input)
+        reaper.Main_OnCommand(commandID, 0)
+      elseif type == 'MIDI' then
+        --- open midi editor before apply actions from MIDI selection ---
+        local main_commandID = reaper.NamedCommandLookup("40153") --View: Toggle show MIDI editor windows
+        reaper.Main_OnCommand(main_commandID, 0)
+        ---
+        activeMidiEditor = reaper.MIDIEditor_GetActive()
+        local commandID = reaper.NamedCommandLookup(cID_input)
+        reaper.MIDIEditor_OnCommand(activeMidiEditor, commandID)
+
+      end
+    else
+      Msg('commandID or type value is missed or wrong')
+    end
   end,
   
 	getWindowState = function(script_win_title) --get active window srate form title
