@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="e464d7e596ab98eed4636b6cc54ca1073b3637bb" name="AmelianceSkyMusic scripts">
+<index version="1" commit="3498a1544636ef78b7eafd3b2432ed8b844a54e4" name="AmelianceSkyMusic scripts">
   <category name="_libraries">
     <reapack name="ASM [_LIBRARY] asm.lua" type="script" desc="ASM [_LIBRARY] asm.lua">
       <version name="1.0.2" author="Rsay Uaie (Ameliance SkyMusic)" time="2019-08-01T07:09:51Z">
@@ -216,6 +216,10 @@
       <version name="1.0.2" author="Rsay Uaie (Ameliance SkyMusic)" time="2020-04-20T17:13:40Z">
         <changelog><![CDATA[+ Some fixes]]></changelog>
         <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/8da766f77168c562b0209c44d641c79d8b2d5d37/ITEM/ASM%20%5BITEM%5D%20Open%20item%20(contextual_editable)%20-midi%20in%20editor%20(and%20zoom)%20%20-audio%20properties%20(toggle)%20-subproject.lua</source>
+      </version>
+      <version name="1.0.3" author="Rsay Uaie (Ameliance SkyMusic)" time="2020-05-15T15:12:12Z">
+        <changelog><![CDATA[+ Some fixes]]></changelog>
+        <source main="main">https://github.com/AmelianceSkyMusic/ASM_Reaper_scripts/raw/3498a1544636ef78b7eafd3b2432ed8b844a54e4/ITEM/ASM%20%5BITEM%5D%20Open%20item%20(contextual_editable)%20-midi%20in%20editor%20(and%20zoom)%20%20-audio%20properties%20(toggle)%20-subproject.lua</source>
       </version>
     </reapack>
     <reapack name="ASM [ITEM] Remove selected items and select next (keep the selection of the extreme element).lua" type="script" desc="ASM [ITEM] Remove selected items and select next (keep the selection of the extreme element)">
