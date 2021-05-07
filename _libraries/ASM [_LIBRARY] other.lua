@@ -4,7 +4,7 @@
  * Author URI: https://forum.cockos.com/member.php?u=123975
  * Licence: GPL v3
  * REAPER: 5.0
- * Version: 1.0.0
+ * Version: 1.0.1
 --]]
 
 --[[
@@ -18,4 +18,3 @@
 ----------------------------------------------------------------------
 
 function Msg(param) reaper.ShowConsoleMsg(tostring(param).."\n") end
-reaper.ShowConsoleMsg("")
